@@ -30,6 +30,10 @@ class Post(models.Model):
     # Placeholder as URL
     post_image = models.URLField(blank=True, null=True, default='https://via.placeholder.com/600x400.png?text=No+Image+Available')
     edited_on = models.DateTimeField(auto_now=True) 
+    class Meta:
+        ordering = ["-created_on", "author"]
+    def __str__(self):
+        return f"{self.title} | written by {self.author}"
     
     
 class Comment(models.Model):
@@ -41,3 +45,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True) 
+    class Meta:
+        ordering = ["created_on"]
+    def __str__(self):
+        return f"Comment {self.content} by {self.author}"
