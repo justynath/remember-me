@@ -30,3 +30,14 @@ class Post(models.Model):
     # Placeholder as URL
     post_image = models.URLField(blank=True, null=True, default='https://via.placeholder.com/600x400.png?text=No+Image+Available')
     edited_on = models.DateTimeField(auto_now=True) 
+    
+    
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    content = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+    edited_on = models.DateTimeField(auto_now=True) 
