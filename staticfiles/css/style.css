@@ -38,8 +38,6 @@
 }
 
 
-
-
 /* General Container Styling */
 .main-content .container-fluid {
     padding: 2rem;
@@ -103,9 +101,6 @@
 }
 
 
-
-
-
 /* Footer Styling */
 .footer {
     background-color: #0d1b2a; 
@@ -126,6 +121,58 @@
 .footer-link:hover {
     color: #ffa500; 
 }
+
+
+/* Post Detail Styling */
+/* Masthead Styling */
+.post-details .masthead {
+    background-color: #1a73e8; 
+    color: #ffffff; 
+    padding: 2rem 0;
+}
+
+.post-details .masthead-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post-details .masthead .post-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.post-details .masthead .post-subtitle {
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+
+.post-details .masthead-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Content Section */
+.post-details .content-container {
+    background-color: #ffffff; 
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.post-details .card-body {
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Links */
+/* .post-details a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.post-details a:hover {
+    color: #ffa500; 
+} */
 
 
 
@@ -155,5 +202,20 @@
 
     .container-fluid {
         padding: 1rem;
+    }
+}
+
+/* Responsive Adjustments for Post Detail */
+@media (max-width: 768px) {
+    .post-details .masthead .post-title {
+        font-size: 1.5rem;
+    }
+
+    .post-details .masthead .post-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .post-details .masthead-image {
+        display: none; /* Hide image on smaller screens */
     }
 }
