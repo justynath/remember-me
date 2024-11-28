@@ -239,6 +239,34 @@
 .view-all-link:hover {
     color: #ffa500; 
 }
+
+/* Login/Sign Up Button */
+.btn-login-signup {
+    display: inline-block;
+    background-color: #188181; 
+    color: #ffffff; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-login-signup:hover {
+    background-color: #ffffff;
+    color: #188181; 
+    border: 1px solid #188181;
+}
+
+/* Login Message Styling */
+.login-message {
+    font-size: 1rem;
+    color: #333; 
+    margin-bottom: 1rem; 
+    font-style: italic; 
+    text-align: center;
+}
 /* end of Home Page Styling */
 
 
@@ -248,16 +276,12 @@
     .navbar-brand span {
         font-size: 1.5rem; /* Adjust for smaller screens */
     }
-}
-
-/* Navbar Toggler Styling */
-.navbar-toggler {
-    border-color: #e6e6e6; 
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23e6e6e6' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); 
-}
+    .navbar-toggler {
+        border-color: #e6e6e6; 
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23e6e6e6' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); 
+    }
 
 /* Responsive Adjustments for Main Content*/
 @media (max-width: 768px) {
@@ -287,8 +311,9 @@
 
 
 /* Responsive Adjustments for Home Page */
-/* Introductory - this does not work BUG */
+
 @media (max-width: 768px) {
+/* Introductory - this does not work BUG */
     .intro-section { 
         display: block; 
         text-align: center; 
@@ -307,8 +332,6 @@
         padding: 1rem; 
         text-align: center;
     }
-}
-@media (max-width: 768px) {
     .recent-memories-label {
         font-size: 1rem;
     }
@@ -316,5 +339,12 @@
     .view-all-link {
         font-size: 0.9rem;
     }
-}
+    .btn-login-signup {
+        font-size: 0.9rem; 
+        padding: 0.5rem 1rem; 
+    }
 
+    .login-message {
+        font-size: 0.9rem; 
+    }
+}
