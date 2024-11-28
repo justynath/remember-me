@@ -1,19 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post
+from django.views.generic import TemplateView
 
 # Create your views here.
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "memories/index.html"
-    paginate_by = 6
     
 class PostLists(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "memories/memories.html"
     paginate_by = 6
 
+class AboutView(TemplateView):
+    template_name = 'memories/about.html'
 
 def post_detail(request, slug):
     """

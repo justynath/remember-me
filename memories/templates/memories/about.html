@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="about-page">
+    <!-- Introductory Section -->
+    <div class="intro-section">
+        <div class="container-fluid d-flex align-items-start flex-wrap">
+            <!-- Text Section -->
+            <div class="intro-text">
+                <p>This blog is a space created with love, devotion, and a deep desire to preserve memories that might otherwise fade with time. It exists for one very special reason: to help Finn, a curious and wonderful young boy, get to know his daddy—the man who loved him so deeply but couldn’t stay to watch him grow up. This is a place where stories, moments, and glimpses of his dad’s life are kept alive, a treasure chest of memories for Finn to open as he grows older and seeks to understand the man who helped shape him.</p>
+            </div>
+            <!-- Image Section -->
+            <div class="intro-image">
+                <img src="{% static 'images/about.jpg' %}" alt="About Finn and His Daddy" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Content Section -->
+    <div class="container mt-4">
+        <p>Losing a parent so young is a difficult and profound absence. Finn, not even two, lost his daddy before he had the chance to create lasting memories together. But that doesn’t mean Finn has to grow up without knowing who his dad was—what he loved, what made him laugh, what kind of person he was. This blog was created to answer the questions Finn will have as he grows: What was Daddy like? What did he love? How am I like him? Through these pages, Finn will find the answers to those questions and more, discovering the ways he carries his father’s spirit within him.</p>
+
+        <p>Here, you’ll find stories about Finn’s dad, snapshots of his life, and reflections on the love and joy he brought to the people around him. These are the threads that weave together his legacy, and through them, Finn will come to know his father—not just as a distant figure, but as someone vibrant and real, whose presence continues to be felt every day. This space is a bridge across time, a way for Finn to connect with his dad and carry his memory forward.</p>
+
+        <p>Ultimately, this blog is a gift for Finn. It’s a way to show him how loved he was—and still is—by a father who would have given the world to be with him. It’s also a celebration of his dad’s life and a reminder that even though he’s no longer here, his love remains, growing alongside Finn with every passing year. This is where memories become stories, and stories become a lasting bond that Finn can hold close, always.</p>
+    </div>
+</div>
+{% endblock %}
