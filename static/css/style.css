@@ -175,6 +175,32 @@
 } */
 
 
+/* Memories Page Additional Styling */
+/* Recent Memories Label */
+.recent-memories-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a73e8; 
+    margin: 0;
+    text-align: left;
+}
+
+/* View All Link */
+.view-all-link {
+    font-size: 1rem;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: right;
+}
+
+.view-all-link:hover {
+    color: #ffa500; 
+}
+
+
+
 
 
 
