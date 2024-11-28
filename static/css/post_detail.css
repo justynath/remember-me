@@ -1,8 +1,8 @@
 /* Post Detail Styling */
 /* Masthead Styling */
 .post-details .masthead {
-    background-color: #1a73e8; 
-    color: #ffffff; 
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
     padding: 2rem 0;
 }
 
@@ -18,7 +18,7 @@
 
 .post-details .masthead .post-subtitle {
     font-size: 1rem;
-    color: #f5f5f5;
+    color: var(--clr-bg-light);
 }
 
 .post-details .masthead-image {
@@ -28,28 +28,26 @@
 
 /* Content Section */
 .post-details .content-container {
-    background-color: #ffffff; 
+    background-color: var(--clr-text-light);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .post-details .card-body {
-    color: #333333;
+    color: var(--clr-text-dark);
     line-height: 1.5;
 }
 
 /* Links */
-/* .post-details a {
-    color: #1a73e8;
+.post-details a {
+    color: var(--clr-primary);
     text-decoration: none;
 }
 
 .post-details a:hover {
-    color: #ffa500; 
-} */
-/* end of Post Detail Styling */
-
+    color: var(--clr-accent-hover);
+}
 
 /* Responsive Adjustments for Post Detail */
 @media (max-width: 768px) {
@@ -62,6 +60,6 @@
     }
 
     .post-details .masthead-image {
-        display: none; /* Hide image on smaller screens */
+        display: none;
     }
 }
