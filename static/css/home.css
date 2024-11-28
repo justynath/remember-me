@@ -1,0 +1,129 @@
+/* Home Page Styling */
+/* Introductory Section */
+.intro-section {
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.intro-image {
+    flex: 0 0 40%; 
+    padding: 1rem; 
+}
+
+.intro-image img {
+    width: 100%; 
+    border-radius: 8px; 
+    height: auto; 
+}
+
+.intro-text {
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 1rem; 
+    text-align: center; 
+}
+
+.intro-text p {
+    font-size: 1.25rem; 
+    color: #333; 
+    margin: 0; 
+    font-style: italic; 
+    line-height: 1.6;
+}
+
+
+/* Recent Memories Label */
+.recent-memories-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a73e8; 
+    margin: 0;
+    text-align: left;
+}
+
+/* View All Link */
+.view-all-link {
+    font-size: 1rem;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: right;
+}
+
+.view-all-link:hover {
+    color: #ffa500; 
+}
+
+/* Login/Sign Up Button */
+.btn-login-signup {
+    display: inline-block;
+    background-color: #188181; 
+    color: #ffffff; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-login-signup:hover {
+    background-color: #ffffff;
+    color: #188181; 
+    border: 1px solid #188181;
+}
+
+/* Login Message Styling */
+.login-message {
+    font-size: 1rem;
+    color: #333; 
+    margin-bottom: 1rem; 
+    font-style: italic; 
+    text-align: center;
+}
+/* end of Home Page Styling */
+
+
+/* Responsive Adjustments for Home Page */
+@media (max-width: 768px) {
+    /* Introductory - this does not work BUG */
+        .intro-section { 
+            display: block; 
+            text-align: center; 
+        }
+    
+        .intro-image {
+            width: 100%; 
+            max-width: 400px; 
+            margin: 0 auto 1rem auto; 
+            padding: 0; 
+        }
+    
+        .intro-text {
+            width: 100%; 
+            margin: 0 auto; 
+            padding: 1rem; 
+            text-align: center;
+        }
+        .recent-memories-label {
+            font-size: 1rem;
+        }
+    
+        .view-all-link {
+            font-size: 0.9rem;
+        }
+        .btn-login-signup {
+            font-size: 0.9rem; 
+            padding: 0.5rem 1rem; 
+        }
+    
+        .login-message {
+            font-size: 0.9rem; 
+        }
+    }

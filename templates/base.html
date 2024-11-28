@@ -1,6 +1,7 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'memories' as memories_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -22,7 +23,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
 </head>
 
@@ -51,7 +52,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == memories_url %}active{% endif %}" href="{% url 'memories' %}">Memories</a>
+                        <a class="nav-link {% if request.path == memories_url %}active{% endif %}" href="{% url 'memories' %}">
+                            Memories
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>

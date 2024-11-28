@@ -2,6 +2,10 @@
 {% block content %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}" />
+{% endblock css %}
+
 <div class="post-details">
     <!-- Masthead Section -->
     <div class="masthead">
