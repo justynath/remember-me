@@ -56,6 +56,13 @@
     color: var(--clr-accent-hover);
     font-weight: bold;
 }
+
+/* Login/Sign Up Divider */
+.nav-item .divider {
+    color: var(--clr-text-light); 
+    margin: 0 0.25rem; 
+    font-size: 1rem; 
+}
 /* End of Navbar Styling */
 
 /* Footer Styling */

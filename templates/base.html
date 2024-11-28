@@ -70,17 +70,14 @@
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" 
+                           aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <span class="divider">/</span>
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" 
+                           aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login/Sign Up</a>
-                    </li>
                 </ul>
             </div>
         </div>
