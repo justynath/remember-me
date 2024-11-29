@@ -57,11 +57,17 @@
             </div>
             {% endfor %}
         </div>
+        
         <!-- Login/Sign Up Section -->
         <div class="row mt-5">
             <div class="col-12 text-center">
-                <p class="login-message">If you would like to share a memory of Melvin, please sign up:</p>
-                <a href="#" class="btn-login-signup">Login / Sign Up</a>
+                {% if user.is_authenticated %}
+                    <p class="login-message">If you would like to share another memory of Melvin, please do so below:</p>
+                    <a href="#" class="btn-login-signup">Write Memory</a>
+                {% else %}
+                    <p class="login-message">If you would like to share a memory of Melvin, please <span class="color-primary">sign up</span>:</p>
+                    <a href="{% url 'account_signup' %}" class="btn-login-signup">Sign Up</a>
+                {% endif %}
             </div>
         </div>
     </div>

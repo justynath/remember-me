@@ -87,6 +87,11 @@
     text-align: center;
 }
 
+.login-message .color-primary {
+    color: var(--clr-primary);
+    font-weight: bold;
+}
+
 /* Responsive Adjustments for Home Page */
 @media (max-width: 768px) {
     .intro-section {
