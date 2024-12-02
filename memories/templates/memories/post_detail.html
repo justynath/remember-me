@@ -34,6 +34,50 @@
             </div>
         </div>
     </div>
+
+    <!-- Comment Section -->
+    <div class="container mt-4">
+    <!-- Displaying count of comments -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-comments"></i> {{ comment_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+
+    <!-- Displaying Comments -->
+    <div class="row justify-content-center">
+        <div class="card comment-card mb-4 mt-3">
+            <h3 class="text-center">Comments</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="p-3 comments
+                    {% if not comment.approved and comment.author == user %}
+                    faded{% elif not comment.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ comment.author }}
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote: 
+                    </p>
+                    <div id="comment{{ comment.id }}" class="comment-body">
+                        {{ comment.content | linebreaks }}
+                    </div>
+                    {% if not comment.approved and comment.author == user %}
+                    <p class="approval text-muted">
+                        This comment is awaiting approval
+                    </p>
+                    {% endif %}
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

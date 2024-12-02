@@ -49,6 +49,28 @@
     color: var(--clr-accent-hover);
 }
 
+/* Comment Section Styling */
+.comments {
+    margin: 0 auto; 
+    padding: 1rem;
+    background-color: var(--clr-bg-light);
+    border-radius: 4px;
+}
+
+.comment-body {
+    color: var(--clr-text-dark);
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+/* Card styling for consistent width */
+.card.comment-card {
+    max-width: 600px;
+    margin: 0 auto; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
 /* Responsive Adjustments for Post Detail */
 @media (max-width: 768px) {
     .post-details .masthead .post-title {
@@ -62,4 +84,8 @@
     .post-details .masthead-image {
         display: none;
     }
+    .card.comment-card {
+        max-width: 90%;
+    }
 }
+
