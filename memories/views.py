@@ -51,7 +51,6 @@ def post_detail(request, slug):
         
     comment_form = CommentForm()
 
-
     return render(
         request,
         "memories/post_detail.html",

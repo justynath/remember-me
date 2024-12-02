@@ -57,7 +57,7 @@
     border-radius: 4px;
 }
 
-.comment-body {
+.comment-content {
     color: var(--clr-text-dark);
     line-height: 1.5;
     overflow-wrap: break-word;
