@@ -63,7 +63,7 @@
             <div class="col-12 text-center">
                 {% if user.is_authenticated %}
                     <p class="login-message">If you would like to share another memory of Melvin, please do so below:</p>
-                    <a href="#" class="btn-login-signup">Write Memory</a>
+                    <a href="{% url 'create_post' %}" class="btn-login-signup">Write Memory</a>
                 {% else %}
                     <p class="login-message">If you would like to share a memory of Melvin, please <span class="color-primary">sign up</span>:</p>
                     <a href="{% url 'account_signup' %}" class="btn-login-signup">Sign Up</a>

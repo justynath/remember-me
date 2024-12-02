@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db import models # this is for temporary memory_image
+from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -34,7 +35,8 @@ class Post(models.Model):
         ordering = ["-created_on", "author"]
     def __str__(self):
         return f"{self.title} | written by {self.author}"
-    
+    def get_absolute_url(self):
+        return reverse('post_detail', args=(str(self.id)))
     
 class Comment(models.Model):
     post = models.ForeignKey(

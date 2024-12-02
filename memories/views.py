@@ -3,7 +3,8 @@ from django.views import generic
 from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -18,6 +19,13 @@ class PostLists(generic.ListView):
 
 class AboutView(TemplateView):
     template_name = 'memories/about.html'
+    
+class AddPost(CreateView):
+    model = Post
+    template_name = 'memories/create_post.html'
+    fields = '__all__'
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.object.slug])
 
 def post_detail(request, slug):
     """
@@ -60,3 +68,4 @@ def post_detail(request, slug):
         "comment_form": comment_form,
         }
     )
+
