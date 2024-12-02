@@ -5,6 +5,10 @@ from .models import Post
 from .forms import CommentForm
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse
+from django.utils.text import slugify
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 
@@ -23,9 +27,26 @@ class AboutView(TemplateView):
 class AddPost(CreateView):
     model = Post
     template_name = 'memories/create_post.html'
-    fields = '__all__'
+    fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
+
+    def form_valid(self, form):
+        # Set the author to the logged-in user
+        form.instance.author = self.request.user
+
+        # Automatically generate the slug from the title
+        form.instance.slug = slugify(form.instance.title)
+
+        # Ensure the status is set to 'Draft' (0)
+        form.instance.status = 0
+
+        return super().form_valid(form)
+
     def get_success_url(self):
-        return reverse('post_detail', args=[self.object.slug])
+        # Redirect to a confirmation page
+        return reverse_lazy('post_pending')
+    
+class PendingPostView(TemplateView):
+    template_name = 'memories/post_pending.html'
 
 def post_detail(request, slug):
     """

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/post_pending.css' %}" />
+{% endblock css %}
+
+<div class="post-pending-container">
+    <h1 class="post-pending-title">Your post has been submitted!</h1>
+    <p class="post-pending-message">Thank you for sharing your memory. Your post is currently awaiting approval from an admin.</p>
+    <a href="{% url 'home' %}" class="btn-post-pending">Return to the home page</a>
+</div>
+{% endblock %}
