@@ -3,10 +3,10 @@ from django.views import generic
 from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, UpdateView
 from django.urls import reverse
 from django.utils.text import slugify
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 
 
@@ -24,29 +24,43 @@ class PostLists(generic.ListView):
 class AboutView(TemplateView):
     template_name = 'memories/about.html'
     
-class AddPost(CreateView):
+class AddPost(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'memories/create_post.html'
     fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
 
     def form_valid(self, form):
-        # Set the author to the logged-in user
         form.instance.author = self.request.user
-
-        # Automatically generate the slug from the title
         form.instance.slug = slugify(form.instance.title)
-
-        # Ensure the status is set to 'Draft' (0)
         form.instance.status = 0
-
         return super().form_valid(form)
 
     def get_success_url(self):
-        # Redirect to a confirmation page
-        return reverse_lazy('post_pending')
-    
+        return reverse('post_detail', args=[self.object.slug])
 class PendingPostView(TemplateView):
     template_name = 'memories/post_pending.html'
+    
+class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    template_name = 'memories/edit_post.html'
+    fields = ('theme', 'excerpt', 'content', 'post_image')
+    def form_valid(self, form):
+        # Ensure no changes to slug or author
+        form.instance.slug = self.object.slug
+        form.instance.author = self.object.author
+        return super().form_valid(form)
+    def test_func(self):
+        # Ensure the current user is the author
+        post = self.get_object()
+        return self.request.user == post.author
+    def handle_no_permission(self):
+        # Redirect unauthorized users to the home page with a message
+        messages.error(self.request, "You do not have permission to edit this post.")
+        return redirect('home')
+    def get_success_url(self):
+        # Redirect to the post detail page after successful edit
+        return reverse('post_detail', args=[self.object.slug])
+    
 
 def post_detail(request, slug):
     """
