@@ -14,7 +14,7 @@ from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "memories/index.html"
+    template_name = "memories/home.html"
     
 class PostLists(generic.ListView):
     queryset = Post.objects.filter(status=1)

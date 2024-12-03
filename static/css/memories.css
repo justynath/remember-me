@@ -1,0 +1,61 @@
+/* Blog Card Styling */
+.card {
+    background-color: var(--clr-text-light);
+    border: 1px solid var(--clr-border-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: var(--clr-primary);
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: var(--clr-text-dark);
+}
+
+.card-excerpt {
+    color: var(--clr-text-dark);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+/* Post Link Styling */
+.post-link {
+    text-decoration: none;
+    color: var(--clr-primary);
+    transition: color 0.3s ease;
+}
+
+.post-link:hover {
+    color: var(--clr-accent-hover);
+}
+
+/* Author Styling */
+.author {
+    font-size: 0.9rem;
+    color: var(--clr-text-dark);
+}
+
+/* Pagination */
+.pagination .page-link {
+    background-color: var(--clr-text-light);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-border-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
