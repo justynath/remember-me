@@ -36,6 +36,8 @@ class AddPost(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
+        if self.object.status == 0:  # Pending status
+            return reverse('post_pending')  # URL name for PendingPostView
         return reverse('post_detail', args=[self.object.slug])
 class PendingPostView(TemplateView):
     template_name = 'memories/post_pending.html'
