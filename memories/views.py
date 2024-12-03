@@ -2,13 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.views.generic import TemplateView, CreateView, UpdateView
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
-
 
 # Create your views here.
 
@@ -26,8 +25,9 @@ class AboutView(TemplateView):
     
 class AddPost(LoginRequiredMixin, CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'memories/create_post.html'
-    fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
+    # fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
