@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Post
-from .forms import CommentForm, PostForm
-from django.views.generic import TemplateView, CreateView, UpdateView
+from .forms import CommentForm, PostForm, EditPostForm
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -44,8 +44,9 @@ class PendingPostView(TemplateView):
     
 class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
+    form_class = EditPostForm
     template_name = 'memories/edit_post.html'
-    fields = ('theme', 'excerpt', 'content', 'post_image')
+    # fields = ('theme', 'excerpt', 'content', 'post_image')
     def form_valid(self, form):
         # Ensure no changes to slug or author
         form.instance.slug = self.object.slug
@@ -63,6 +64,15 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         # Redirect to the post detail page after successful edit
         return reverse('post_detail', args=[self.object.slug])
     
+class DeletePost(DeleteView):
+        model = Post
+        template_name = 'memories/delete_post.html'
+        success_url = reverse_lazy('home')
+        def delete(request):
+            messages.add_message(
+                request, messages.SUCCESS,'Post deleted'
+    )
+
 
 def post_detail(request, slug):
     """

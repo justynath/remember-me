@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Edit Memory{% endblock title %}
+{% block title %}Delete Memory{% endblock title %}
 
 {% block content %}
 
@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="{% static 'css/create_post.css' %}" />
 {% endblock css %}
 
-<!-- Main content of the edit memory page -->
+<!-- Main content of the delete memory page -->
 <main class="create-post-section container mt-5">
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
-            <h1 class="create-post-heading text-center">Edit Memory</h1>
+            <h1 class="create-post-heading text-center">Delete {{ object.title }} Memory</h1>
             <!-- Form for updating a new post -->
+            <br>
             <div class="form-group"></div>
                 <form class="create-post-form" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-primary" type="submit">Update Memory</button>
+                    <strong>Are you sure?!</strong><br>
+                    <button class="btn btn-primary" type="submit">Delete Memory</button>
                 </form>
             </div>
         </div>

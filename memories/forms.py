@@ -18,3 +18,13 @@ class PostForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'post_image': forms.FileInput(attrs={'class': 'form-control'}),
         }
+class EditPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('theme', 'excerpt', 'content', 'post_image')
+        widgets = {
+            'theme': forms.Select(attrs={'class': 'form-control'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'post_image': forms.FileInput(attrs={'class': 'form-control'}),
+        }

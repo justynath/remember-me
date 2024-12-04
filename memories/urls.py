@@ -8,5 +8,6 @@ urlpatterns = [
     path('write-memory/', views.AddPost.as_view(), name = 'create_post'),
     path('pending/', views.PendingPostView.as_view(), name='post_pending'),
     path('<slug:slug>/edit/', views.UpdatePost.as_view(), name='edit_post'),
+    path('<slug:slug>/delete/', views.DeletePost.as_view(), name='delete_post'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
 ]
