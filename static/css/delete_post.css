@@ -1,0 +1,42 @@
+/* Delete Post Page Styling */
+.delete-post-section {
+    background-color: var(--clr-bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.delete-post-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+}
+
+.delete-message {
+    font-size: 1.1rem;
+    color: var(--clr-secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Delete Button Specific Styling */
+.delete-post-section .btn-delete {
+    background-color: #f44336; /* Red for Delete */
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.delete-post-section .btn-delete:hover {
+    background-color: #c62828; /* Darker red for hover */
+    color: var(--clr-primary);
+}
