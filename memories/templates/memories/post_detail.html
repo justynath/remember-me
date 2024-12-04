@@ -38,10 +38,10 @@
 
     <!-- Edit and Delete Option Section -->
     <div class="row mt-5">
-        <div class="col-12 text-center">
+        <div class="col-12 btn-container">
             {% if user.is_authenticated and user == post.author %}
-            <a href="{% url 'edit_post' post.slug %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'delete_post' post.slug %}" class="btn btn-primary">Delete</a>
+            <a href="{% url 'edit_post' post.slug %}" class="btn btn-edit">Edit</a>
+            <a href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
             {% endif %}
         </div>
     </div>

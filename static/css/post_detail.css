@@ -49,6 +49,47 @@
     color: var(--clr-accent-hover);
 }
 
+/* Common Styling for Buttons */
+.post-details .btn {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 120px; /* Fixed width for consistency */
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Edit Button Specific Styling */
+.post-details .btn-edit {
+    background-color: #4CAF50; /* Green for Edit */
+}
+
+.post-details .btn-edit:hover {
+    background-color: #388E3C; /* Darker green for hover */
+    color: var(--clr-text-light);
+}
+
+/* Delete Button Specific Styling */
+.post-details .btn-delete {
+    background-color: #f44336; /* Red for Delete */
+}
+
+.post-details .btn-delete:hover {
+    background-color: #c62828; /* Darker red for hover */
+    color: var(--clr-text-light);
+}
+
+/* Button Container Styling */
+.post-details .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 /* Comment Section Styling */
 .comments {
     margin: 0 auto; 
