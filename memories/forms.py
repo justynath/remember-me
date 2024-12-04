@@ -21,8 +21,9 @@ class PostForm(forms.ModelForm):
 class EditPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('theme', 'excerpt', 'content', 'post_image')
+        fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
         widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'disabled': 'disabled'}),
             'theme': forms.Select(attrs={'class': 'form-control'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),

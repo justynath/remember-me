@@ -9,7 +9,7 @@
 {% endblock css %}
 
 <main class="delete-post-section">
-    <h1 class="delete-post-heading">Delete {{ object.title }} Memory</h1>
+    <h1 class="delete-post-heading">Delete "{{ object.title }}"</h1>
     <p class="delete-message">This action is irreversible. Are you sure you want to permanently delete this memory?</p>
     <form method="post">
         {% csrf_token %}

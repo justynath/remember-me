@@ -48,20 +48,17 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'memories/edit_post.html'
     # fields = ('theme', 'excerpt', 'content', 'post_image')
     def form_valid(self, form):
-        # Ensure no changes to slug or author
+        form.instance.title = self.object.title  
         form.instance.slug = self.object.slug
         form.instance.author = self.object.author
         return super().form_valid(form)
     def test_func(self):
-        # Ensure the current user is the author
         post = self.get_object()
         return self.request.user == post.author
     def handle_no_permission(self):
-        # Redirect unauthorized users to the home page with a message
         messages.error(self.request, "You do not have permission to edit this post.")
         return redirect('home')
     def get_success_url(self):
-        # Redirect to the post detail page after successful edit
         return reverse('post_detail', args=[self.object.slug])
     
 class DeletePost(DeleteView):
