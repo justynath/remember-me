@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
+
+{% block title %}Memory{% endblock title %}
+
+{% block content %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/post_detail.css' %}" />
