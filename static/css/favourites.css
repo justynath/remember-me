@@ -1,0 +1,33 @@
+/* Page Title */
+.favourites-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Remove Favourite Button */
+.remove-favourite-btn {
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.remove-favourite-btn:hover {
+    background-color: var(--clr-accent-hover);
+    color: var(--clr-text-light);
+}
+
+/* No Favourites Message */
+.no-favourites {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--clr-text-dark);
+    margin-top: 2rem;
+}

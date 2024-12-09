@@ -1,15 +1,52 @@
-<h1>My Favorite Blog Posts</h1>
+{% extends "base.html" %}
+{% load static %}
 
-<ul>
-    {% for favorite in favorites %}
-        <li>
-            <a href="{% url 'post_detail' favorite.blog_post.slug %}">
-                {{ favorite.blog_post.title }}
-            </a>
-            <form method="post" action="{% url 'remove_from_favorites' favorite.blog_post.id %}" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Remove</button>
-            </form>
-        </li>
-    {% endfor %}
-</ul>
+{% block title %}Favourites{% endblock title %}
+
+{% block content %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/favourites.css' %}" />
+{% endblock css %}
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h1 class="favourites-title">My Favourite Blog Posts</h1>
+                <div class="row">
+                    {% for favourite in favourites %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <div class="image-flash">
+                                        <p class="author">Author: {{ favourite.blog_post.author }}</p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'post_detail' favourite.blog_post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ favourite.blog_post.title }}</h2>
+                                </a>
+                                <p class="card-excerpt">{{ favourite.blog_post.excerpt }}</p>
+                                <hr />
+                                <p class="card-text">{{ favourite.blog_post.created_on }}</p>
+                                <form method="post" action="{% url 'remove_from_favourites' favourite.blog_post.id %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger remove-favourite-btn">Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% if not favourites %}
+                <p class="no-favourites">You haven't added any posts to your favourites yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -63,6 +63,13 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Button Container Styling */
+.post-details .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 /* Edit Button Specific Styling */
 .post-details .btn-edit {
     background-color: #4CAF50; /* Green for Edit */
@@ -83,12 +90,27 @@
     color: var(--clr-text-light);
 }
 
-/* Button Container Styling */
-.post-details .btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+/* Favourites Button */
+.btn-favourites {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: calc(240px + 1rem); 
+    text-align: center;
+    display: block; 
+    margin: 0 auto; 
 }
+
+.btn-favourites:hover {
+    background-color: var(--clr-primary-hover);
+    color: var(--clr-primary);
+}
+
 
 /* Comment Section Styling */
 .comments {

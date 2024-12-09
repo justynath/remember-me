@@ -28,7 +28,6 @@ class AddPost(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'memories/create_post.html'
-    # fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
@@ -45,11 +44,11 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     form_class = EditPostForm
     template_name = 'memories/edit_post.html'
-    # fields = ('theme', 'excerpt', 'content', 'post_image')
     def form_valid(self, form):
         form.instance.title = self.object.title  
         form.instance.slug = self.object.slug
         form.instance.author = self.object.author
+        messages.success(self.request, f'"{self.object.title}" has been successfully updated.')
         return super().form_valid(form)
     def test_func(self):
         post = self.get_object()
@@ -60,32 +59,24 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
     
-class DeletePost(DeleteView):
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'memories/delete_post.html'
-    success_url = reverse_lazy('home')
-    # THIS DOES NOT WORK? BUG DO I NEED THIS
+    success_url = reverse_lazy('memories') 
     def delete(self, request, *args, **kwargs):
-        """
-        Override the delete method to add a success message.
-        """
-        response = super().delete(request, *args, **kwargs)  # Call the parent delete method
-        messages.success(request, "Post deleted successfully.")  # Add the success message
+        response = super().delete(request, *args, **kwargs)
+        messages.success(request, f'"{self.object.title}" has been successfully deleted.')
         return response
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+    def handle_no_permission(self):
+        messages.error(self.request, "You do not have permission to delete this post.")
+        return redirect('home')
+
 
 def post_detail(request, slug):
-    """
-    Display an individual :model:`memories.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`memories.Post`.
-
-    **Template:**
-
-    :template:`memories/post_detail.html`
-    """
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -116,9 +107,6 @@ def post_detail(request, slug):
     )
 
 class FavouritesListView(LoginRequiredMixin, ListView):
-    """
-    Displays the list of favourite blog posts for the logged-in user.
-    """
     model = Favourite
     template_name = "memories/favourites_list.html"
     context_object_name = "favourites"
@@ -128,25 +116,22 @@ class FavouritesListView(LoginRequiredMixin, ListView):
 
 
 class AddToFavouritesView(LoginRequiredMixin, generic.View):
-    """
-    Handles adding a blog post to the user's favorites.
-    """
-
+    
     def post(self, request, *args, **kwargs):
         post_id = kwargs.get('post_id')
         blog_post = get_object_or_404(Post, id=post_id)
         favourite, created = Favourite.objects.get_or_create(user=request.user, blog_post=blog_post)
         if created:
             messages.success(request, f'"{blog_post.title}" has been added to your favourites.')
-            return JsonResponse({'message': 'Added to favourites'}, status=201)
-        return JsonResponse({'message': 'Already in favourites'}, status=200)
-
+        else:
+            messages.info(request, f'"{blog_post.title}" is already in your favourites.')
+        return self.get_success_url()
+    
+    def get_success_url(self):
+        return redirect('favourites_list')
 
 class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
-    """
-    Handles removing a blog post from the user's favourites.
-    """
-
+    
     def post(self, request, *args, **kwargs):
         post_id = kwargs.get('post_id')
         blog_post = get_object_or_404(Post, id=post_id)
@@ -154,5 +139,9 @@ class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
         if favourite.exists():
             favourite.delete()
             messages.success(request, f'"{blog_post.title}" has been removed from your favourites.')
-            return JsonResponse({'message': 'Removed from favourites'}, status=200)
-        return JsonResponse({'message': 'Not in favourites'}, status=404)
+        else:
+            messages.info(request, f'"{blog_post.title}" was not in your favourites.')
+        return self.get_success_url()
+    
+    def get_success_url(self):
+        return redirect('favourites_list')
