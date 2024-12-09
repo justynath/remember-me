@@ -1,0 +1,15 @@
+<h1>My Favorite Blog Posts</h1>
+
+<ul>
+    {% for favorite in favorites %}
+        <li>
+            <a href="{% url 'post_detail' favorite.blog_post.slug %}">
+                {{ favorite.blog_post.title }}
+            </a>
+            <form method="post" action="{% url 'remove_from_favorites' favorite.blog_post.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>

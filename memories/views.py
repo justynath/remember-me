@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post
+from .models import Post, Favourite
 from .forms import CommentForm, PostForm, EditPostForm
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, ListView
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -114,3 +115,44 @@ def post_detail(request, slug):
         }
     )
 
+class FavouritesListView(LoginRequiredMixin, ListView):
+    """
+    Displays the list of favourite blog posts for the logged-in user.
+    """
+    model = Favourite
+    template_name = "memories/favourites_list.html"
+    context_object_name = "favourites"
+
+    def get_queryset(self):
+        return Favourite.objects.filter(user=self.request.user).select_related('blog_post')
+
+
+class AddToFavouritesView(LoginRequiredMixin, generic.View):
+    """
+    Handles adding a blog post to the user's favorites.
+    """
+
+    def post(self, request, *args, **kwargs):
+        post_id = kwargs.get('post_id')
+        blog_post = get_object_or_404(Post, id=post_id)
+        favourite, created = Favourite.objects.get_or_create(user=request.user, blog_post=blog_post)
+        if created:
+            messages.success(request, f'"{blog_post.title}" has been added to your favourites.')
+            return JsonResponse({'message': 'Added to favourites'}, status=201)
+        return JsonResponse({'message': 'Already in favourites'}, status=200)
+
+
+class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
+    """
+    Handles removing a blog post from the user's favourites.
+    """
+
+    def post(self, request, *args, **kwargs):
+        post_id = kwargs.get('post_id')
+        blog_post = get_object_or_404(Post, id=post_id)
+        favourite = Favourite.objects.filter(user=request.user, blog_post=blog_post)
+        if favourite.exists():
+            favourite.delete()
+            messages.success(request, f'"{blog_post.title}" has been removed from your favourites.')
+            return JsonResponse({'message': 'Removed from favourites'}, status=200)
+        return JsonResponse({'message': 'Not in favourites'}, status=404)

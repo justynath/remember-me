@@ -51,3 +51,14 @@ class Comment(models.Model):
         ordering = ["created_on"]
     def __str__(self):
         return f"Comment {self.content} by {self.author}"
+    
+class Favourite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favourites')
+    blog_post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='favourited_by')
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'blog_post')  # Prevent duplicate favourites for the same user and blog post
+
+    def __str__(self):
+        return f"{self.user.username} - {self.blog_post.title}"
