@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
 from .models import Post
@@ -28,16 +28,14 @@ class AddPost(LoginRequiredMixin, CreateView):
     form_class = PostForm
     template_name = 'memories/create_post.html'
     # fields = ('title', 'theme', 'excerpt', 'content', 'post_image')
-
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         form.instance.status = 0
         return super().form_valid(form)
-
     def get_success_url(self):
-        if self.object.status == 0:  # Pending status
-            return reverse('post_pending')  # URL name for PendingPostView
+        if self.object.status == 0:  
+            return reverse('post_pending') 
         return reverse('post_detail', args=[self.object.slug])
 class PendingPostView(TemplateView):
     template_name = 'memories/post_pending.html'
@@ -62,14 +60,17 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return reverse('post_detail', args=[self.object.slug])
     
 class DeletePost(DeleteView):
-        model = Post
-        template_name = 'memories/delete_post.html'
-        success_url = reverse_lazy('home')
-        def delete(request):
-            messages.add_message(
-                request, messages.SUCCESS,'Post deleted'
-    )
-
+    model = Post
+    template_name = 'memories/delete_post.html'
+    success_url = reverse_lazy('home')
+    # THIS DOES NOT WORK? BUG DO I NEED THIS
+    def delete(self, request, *args, **kwargs):
+        """
+        Override the delete method to add a success message.
+        """
+        response = super().delete(request, *args, **kwargs)  # Call the parent delete method
+        messages.success(request, "Post deleted successfully.")  # Add the success message
+        return response
 
 def post_detail(request, slug):
     """
