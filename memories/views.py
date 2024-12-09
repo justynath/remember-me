@@ -9,6 +9,8 @@ from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.http import JsonResponse
+from django.shortcuts import HttpResponseRedirect
+
 
 # Create your views here.
 
@@ -93,6 +95,10 @@ def post_detail(request, slug):
             messages.add_message(
                 request, messages.SUCCESS,'Comment submitted and awaiting approval'
     )
+            # Redirect to avoid form resubmission
+            return HttpResponseRedirect(request.path_info)
+
+
         
     comment_form = CommentForm()
 
@@ -113,7 +119,6 @@ class FavouritesListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Favourite.objects.filter(user=self.request.user).select_related('blog_post')
-
 
 class AddToFavouritesView(LoginRequiredMixin, generic.View):
     
