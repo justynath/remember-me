@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post, Favourite
+from .models import Post, Favourite, Comment
 from .forms import CommentForm, PostForm, EditPostForm
 from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, ListView
 from django.urls import reverse
@@ -98,8 +98,7 @@ def post_detail(request, slug):
             # Redirect to avoid form resubmission
             return HttpResponseRedirect(request.path_info)
 
-
-        
+  
     comment_form = CommentForm()
 
     return render(
@@ -111,6 +110,31 @@ def post_detail(request, slug):
         "comment_form": comment_form,
         }
     )
+
+class EditComment(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'memories/edit_comment.html'
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.author
+    def form_valid(self, form):
+        messages.success(self.request, "Your comment has been updated.")
+        return super().form_valid(form)
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.object.post.slug])
+
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    template_name = 'memories/delete_comment.html'
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.author
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "Your comment has been deleted.")
+        return super().delete(request, *args, **kwargs)
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.object.post.slug])
 
 class FavouritesListView(LoginRequiredMixin, ListView):
     model = Favourite
