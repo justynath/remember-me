@@ -40,7 +40,7 @@
     </div>
 
     <!-- Edit and Delete Option Section -->
-    <div class="row mt-5">
+    <div class="container mt-4">
         <div class="col-12 btn-container">
             {% if user.is_authenticated and user == post.author %}
             <a href="{% url 'edit_post' post.slug %}" class="btn btn-edit">Edit</a>
@@ -48,7 +48,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="container mt-4">
         <div class="col-12 btn-container">
             <form method="post" action="{% url 'add_to_favourites' post.id %}">
                 {% csrf_token %}
@@ -97,9 +97,13 @@
                 </div>
                 <br>
                 {% if comment.author == request.user %}
-                <a href="{% url 'edit_comment' comment.id %}" class="btn btn-sm btn-warning">Edit</a>
-                <a href="{% url 'delete_comment' comment.id %}" class="btn btn-sm btn-danger">Delete</a>
-                {% endif %}
+                {% if comment.author == request.user %}
+                    <div class="comment-buttons">
+                        <a href="{% url 'edit_comment' comment.id %}" class="btn btn-comment-edit">Edit</a>
+                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-comment-delete">Delete</a>
+                    </div>
+            {% endif %}               
+                {% endif %}            
                 <hr>
                 {% endfor %}
             </div>
