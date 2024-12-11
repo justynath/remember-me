@@ -1,5 +1,6 @@
 from .models import Comment, Post
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -15,7 +16,8 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'theme': forms.Select(attrs={'class': 'form-control'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}, 
+                                        'class': 'form-control'}),
             'post_image': forms.FileInput(attrs={'class': 'form-control'}),
         }
 class EditPostForm(forms.ModelForm):

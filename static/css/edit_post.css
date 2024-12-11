@@ -22,7 +22,7 @@
 }
 
 .edit-post-form button {
-    background-color: #4CAF50; /* Green for Edit */
+    background-color: #4CAF50;
     color: var(--clr-text-light);
     border: none;
     padding: 0.75rem;
@@ -35,6 +35,6 @@
 }
 
 .edit-post-form button:hover {
-    background-color: #388E3C; /* Darker green for hover */
+    background-color: #388E3C; 
     color: var(--clr-primary);
 }
