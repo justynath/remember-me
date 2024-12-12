@@ -42,7 +42,6 @@
 }
 
 /* Responsive Adjustments for About Page */
-/* somethign does not work - BUG */
 @media (max-width: 768px) {
     .about-page .intro-section {
         flex-direction: column; 
@@ -55,13 +54,16 @@
     }
 
     .about-page .intro-image {
-        width: 100%; 
-        max-width: 400px; 
-        padding: 0;
+        flex: 1 1 auto !important; /* Override any previous flex rules */
+        width: 100% !important; /* Force full width */
+        padding: 0 !important; /* Remove padding */
         margin-bottom: 1rem;
     }
 
-    .about-page .container {
-        font-size: 0.95rem; 
+    .about-page .intro-image img {
+        width: 100% !important;
+        height: auto;
     }
 }
+
+
