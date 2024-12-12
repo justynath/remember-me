@@ -8,7 +8,6 @@
 
 .card-title {
     font-size: 1.25rem;
-    color: var(--clr-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -28,7 +27,7 @@
     text-decoration: none;
     color: var(--clr-primary);
     transition: color 0.3s ease;
-}
+} 
 
 .post-link:hover {
     color: var(--clr-accent-hover);
@@ -49,7 +48,7 @@
 }
 
 .pagination .page-link:hover {
-    background-color: var(--clr-accent);
+    background-color: var(--clr-accent-hover);
     color: var(--clr-text-light);
 }
 

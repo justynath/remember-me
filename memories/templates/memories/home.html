@@ -14,12 +14,7 @@
 
 <!-- Introductory Section -->
 <div class="intro-section">
-    <div class="container-fluid d-flex align-items-center">
-        <!-- Image Section -->
-        <div class="intro-image">
-            <img src="{% static 'images/home.jpg' %}" alt="Introduction Image" class="img-fluid rounded">
-        </div>
-        <!-- Text Section -->
+    <div class="overlay">
         <div class="intro-text">
             <p>Those we love never truly leave us; they live on in the stories we tell, the memories we cherish, and the love that shapes who we are. Through our hearts, their light continues to shine, guiding us even in their absence.</p>
         </div>
@@ -66,7 +61,7 @@
             <div class="col-12 text-center">
                 {% if user.is_authenticated %}
                     <p class="login-message">If you would like to share another memory of Melvin, please do so below:</p>
-                    <a href="{% url 'create_post' %}" class="btn-login-signup">Write Memory</a>
+                    <a href="{% url 'create_post' %}" class="btn-login-signup">Share Memory</a>
                 {% else %}
                     <p class="login-message">If you would like to share a memory of Melvin, please <span class="color-primary">sign up</span>:</p>
                     <a href="{% url 'account_signup' %}" class="btn-login-signup">Sign Up</a>
