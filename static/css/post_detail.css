@@ -108,7 +108,7 @@
 
 .post-details .btn-favourites:hover {
     background-color: var(--clr-primary-hover);
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
 }
 
 
@@ -195,7 +195,7 @@
 
 .btn-signup:hover {
     background-color: var(--clr-primary-hover);
-    transform: scale(1.05);
+    color: var(--clr-text-light);
 }
 
 /* Form Input Field Styling */

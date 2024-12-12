@@ -2,7 +2,9 @@
 :root {
     /* Primary Colors */
     --clr-primary: #188181; /* Calm Green */
-    --clr-primary-hover: #ffffff; /* Hover effect for primary */
+    --clr-primary-hover: #0f5555; /* Darker shade of Calm Green */
+    /* --clr-primary: #188181; Calm Green */
+    /* --clr-primary-hover: #ffffff; Hover effect for primary */
 
     /* Text Colors */
     --clr-text-dark: #333333; /* Dark Grey */

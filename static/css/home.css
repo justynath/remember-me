@@ -74,8 +74,8 @@
 
 .btn-login-signup:hover {
     background-color: var(--clr-primary-hover);
-    color: var(--clr-primary);
-    border: 1px solid var(--clr-primary);
+    color: var(--clr-text-light);
+    /* border: 1px solid var(--clr-primary); */
 }
 
 /* Login Message Styling */

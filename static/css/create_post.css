@@ -35,7 +35,7 @@
 
 .create-post-form button:hover {
     background-color: var(--clr-primary-hover);
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
 }
 
 /* Responsive Adjustments */
