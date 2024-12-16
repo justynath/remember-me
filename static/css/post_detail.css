@@ -1,14 +1,17 @@
-/* Post Detail Styling */
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
 /* Masthead Styling */
 .post-details .masthead {
     background-color: var(--clr-primary);
     color: var(--clr-text-light);
     padding: 2rem 0;
-}
-
-.post-details .masthead-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: center; /* Center-align for better responsiveness */
 }
 
 .post-details .masthead .post-title {
@@ -26,17 +29,40 @@
     border-radius: 8px;
 }
 
-/* Content Section */
-.post-details .content-container {
-    background-color: var(--clr-text-light);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Content and Comment Section */
+.post-details .container,
+.post-details .comment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 
 .post-details .card-body {
     color: var(--clr-text-dark);
     line-height: 1.5;
+    padding: 1rem;
+}
+
+.post-details .comment-container {
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* Comments Section */
+.comments {
+    padding: 1rem;
+    border: 1px solid var(--clr-border-light);
+    border-radius: 8px;
+}
+
+.comment-content {
+    color: var(--clr-text-dark);
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.post-details .comment-card {
+    border: none;
 }
 
 /* Links */
@@ -49,185 +75,150 @@
     color: var(--clr-accent-hover);
 }
 
-/* Common Styling for Buttons */
+/* Buttons General Styling */
 .post-details .btn {
-    background-color: var(--clr-primary);
-    color: var(--clr-text-light);
-    border: none;
-    padding: 0.75rem;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
-    width: 120px; /* Fixed width for consistency */
+    border: none;
+    color: var(--clr-text-light);
+    cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button Container Styling */
-.post-details .btn-container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+.post-details .btn:hover {
+    transform: scale(1.05); /* Slight hover effect */
 }
 
-/* Edit Button Specific Styling */
-.post-details .btn-edit {
-    background-color: #4CAF50; /* Green for Edit */
-}
-
-.post-details .btn-edit:hover {
-    background-color: #388E3C; /* Darker green for hover */
-    color: var(--clr-text-light);
-}
-
-/* Delete Button Specific Styling */
-.post-details .btn-delete {
-    background-color: #f44336; /* Red for Delete */
-}
-
-.post-details .btn-delete:hover {
-    background-color: #c62828; /* Darker red for hover */
-    color: var(--clr-text-light);
+.post-details .post-buttons {
+    padding-top: 0;
 }
 
 /* Favourites Button */
 .post-details .btn-favourites {
     background-color: var(--clr-primary);
-    color: var(--clr-text-light);
-    border: none;
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    width: calc(240px + 1rem); 
-    text-align: center;
-    display: block; 
-    margin: 0 auto; 
+    width: 300px;
+    margin-bottom: 1rem;
 }
-
 .post-details .btn-favourites:hover {
     background-color: var(--clr-primary-hover);
+}
+
+/* Edit Button */
+.post-details .btn-edit {
+    background-color: #4CAF50;
+    width: 150px;
+    margin-left: 0.5rem; 
+    margin-top: 0; 
+    float: right; 
+}
+.post-details .btn-edit:hover {
+    background-color: #388E3C;
     color: var(--clr-text-light);
 }
 
-
-/* Comment Section Styling */
-.comments {
-    margin: 0 auto; 
-    padding: 1rem;
-    background-color: var(--clr-bg-light);
-    border-radius: 4px;
+/* Delete Button */
+.post-details .btn-delete {
+    background-color: #f44336;
+    width: 150px; 
+    margin-left: 0.5rem; 
+    margin-top: 0; 
+    float: right; 
+}
+.post-details .btn-delete:hover {
+    background-color: #c62828;
+    color: var(--clr-text-light);
 }
 
-.comment-content {
-    color: var(--clr-text-dark);
-    line-height: 1.5;
-    overflow-wrap: break-word;
-}
-
-/* Card styling for consistent width */
-.card.comment-card {
-    max-width: 600px;
-    margin: 0 auto; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-/* Align comment buttons to the right */
+/* Comment Buttons Section */
 .comment-buttons {
-    display: flex; 
+    display: flex;
     justify-content: flex-end; 
     gap: 0.5rem; 
-    margin-top: 0.5rem; 
+    margin-top:0; 
+    margin-top: 1rem; 
 }
 
-/* Edit Comment Button Styling */
-.post-details .btn-comment-edit {
-    background-color: #81C784; 
+/* Edit Comment Button */
+.comment-buttons .btn-comment-edit {
+    background-color: #4CAF50;
     color: var(--clr-text-light);
-    font-size: 0.875rem; 
-    padding: 0.5rem;
-    width: 100px; 
+    font-size: 0.875rem;
+    width: 120px; 
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 0.5rem;
 }
-
-.post-details .btn-comment-edit:hover {
-    background-color: #66BB6A; 
+.comment-buttons .btn-comment-edit:hover {
+    background-color: #388E3C;
     color: var(--clr-text-light);
 }
 
-/* Delete Comment Button Styling */
-.post-details .btn-comment-delete {
-    background-color: #E57373; 
+/* Delete Comment Button */
+.comment-buttons .btn-comment-delete {
+    background-color: #f44336;
     color: var(--clr-text-light);
-    font-size: 0.875rem; 
-    padding: 0.5rem; 
-    width: 100px; 
+    font-size: 0.875rem;
+    width: 120px; 
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.post-details .btn-comment-delete:hover {
-    background-color: #EF5350; 
+.comment-buttons .btn-comment-delete:hover {
+    background-color: #c62828;
     color: var(--clr-text-light);
 }
 
-/* Creating New Comments Styling*/
-.card.comment-card {
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-/* Button Styling */
-.btn-signup {
+/* Submit Button */
+#submitButton {
     background-color: var(--clr-primary);
     color: var(--clr-text-light);
+    font-size: 1rem;
+    padding: 0.5rem 1rem; 
+    border-radius: 5px;
     border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 200px; 
+    margin-top: 0.5rem; 
+    margin-left: 0; 
+    float: left;
+    cursor: pointer;
 }
-
-.btn-signup:hover {
+#submitButton:hover {
     background-color: var(--clr-primary-hover);
-    color: var(--clr-text-light);
 }
 
-/* Form Input Field Styling */
-#commentForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Responsive Adjustments for Post Detail */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .post-details .masthead .post-title {
-        font-size: 1.5rem;
+    .post-details .container,
+    .post-details .comment-container {
+        max-width: 90%;
+        padding: 1rem; 
     }
 
-    .post-details .masthead .post-subtitle {
-        font-size: 0.9rem;
+    .row.align-items-center {
+        flex-direction: column; 
+        align-items: center;
     }
 
-    .post-details .masthead-image {
-        display: none;
+    .post-details .btn-favourites,
+    .post-details .btn-edit,
+    .post-details .btn-delete,
+    #submitButton {
+        width: 100%; 
+        margin: 0.5rem 0; 
+        float: none; 
     }
-    .card.comment-card {
-        max-width: 90%;
+
+    .comment-buttons {
+        flex-direction: column; 
+        gap: 0.5rem;
+        align-items: center;
     }
-    .col-md-8,
-    .col-md-4 {
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
-    .card.comment-card {
-        max-width: 90%;
+
+    #submitButton {
+        text-align: left; 
+        width: 100%; 
     }
 }
-
