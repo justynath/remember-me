@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.shortcuts import HttpResponseRedirect
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -174,3 +175,11 @@ class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
     
     def get_success_url(self):
         return redirect('favourites_list')
+      
+def custom_404(request, exception):
+    """ Custom 404 Error Page """
+    return render(request, '404.html', status=404)
+
+def custom_500(request):
+    """ Custom 500 Error Page """
+    return render(request, '500.html', status=500)

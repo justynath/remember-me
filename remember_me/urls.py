@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import handler404, handler500
+from memories.views import custom_404, custom_500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +25,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("memories.urls"), name="memories-urls"),
 ]
+
+handler404 = 'memories.views.custom_404'
+handler500 = 'memories.views.custom_500'

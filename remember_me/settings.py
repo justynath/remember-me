@@ -33,8 +33,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["8000-justynath-rememberme-6k2r27hnhgd.ws.codeinstitute-ide.net", '.herokuapp.com']
-
+ALLOWED_HOSTS = [
+    "8000-justynath-rememberme-6k2r27hnhgd.ws.codeinstitute-ide.net",
+    ".herokuapp.com",
+    "127.0.0.1",
+    "localhost",
+]
 
 # Application definition
 
