@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db import models # this is for temporary memory_image
+from django.db import models
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
@@ -29,9 +29,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    featured_image = CloudinaryField('image', default='placeholder')
-    # Placeholder as URL
-    post_image = models.URLField(blank=True, null=True, default='https://via.placeholder.com/600x400.png?text=No+Image+Available')
+    post_image = CloudinaryField('image', default='placeholder')
     edited_on = models.DateTimeField(auto_now=True) 
     class Meta:
         ordering = ["-created_on", "author"]
