@@ -1,3 +1,11 @@
+/* Page Title */
+.favourites-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
 /* Blog Card Styling */
 .card {
     background-color: var(--clr-text-light);
