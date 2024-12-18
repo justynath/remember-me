@@ -1,0 +1,53 @@
+/* 500 Page Styles */
+.error-page {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--clr-bg-light);
+    color: var(--clr-text-dark);
+}
+
+.error-title {
+    font-size: 2.5rem;
+    color: var(--clr-accent); /* Use Accent color for 500 title */
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--clr-text-dark);
+}
+
+.error-actions {
+    margin-top: 20px;
+}
+
+.error-actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--clr-accent-hover); /* Slightly darker accent for buttons */
+    color: var(--clr-text-dark);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--clr-accent);
+}
