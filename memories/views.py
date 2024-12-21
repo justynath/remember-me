@@ -58,13 +58,15 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
     
-class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+from django.contrib.messages.views import SuccessMessageMixin
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Post
     template_name = 'memories/delete_post.html'
     success_url = reverse_lazy('memories')
-    def delete(self, request, *args, **kwargs):
-        messages.success(request, f'"{self.get_object().title}" has been successfully deleted.')
-        return super().delete(request, *args, **kwargs)
+    def form_valid(self, form):
+        messages.success(self.request, f'"{self.object.title}" has been successfully deleted.')
+        return super().form_valid(form)
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
@@ -116,20 +118,23 @@ class EditComment(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.post.slug])
-class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Comment
     template_name = 'memories/delete_comment.html'
+    success_message = "Your comment has been deleted."
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
+
     def test_func(self):
-        # Ensure only the comment author can delete the comment
         comment = self.get_object()
         return self.request.user == comment.author
-    def delete(self, request, *args, **kwargs):
-        # Add a success message and call the parent method
-        messages.success(self.request, "Your comment has been deleted.")
-        return super().delete(request, *args, **kwargs)
+
     def get_success_url(self):
         # Redirect to the post's detail page
         return reverse('post_detail', args=[self.object.post.slug])
+
     
 class FavouritesListView(LoginRequiredMixin, ListView):
     model = Favourite
