@@ -35,11 +35,11 @@ class AddPost(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         form.instance.status = 0
+        messages.success(self.request, "Post created and awaiting approval.")
         return super().form_valid(form)
     def get_success_url(self):
-        if self.object.status == 0:  
-            return reverse('post_pending') 
-        return reverse('post_detail', args=[self.object.slug])
+        return reverse('post_pending')
+
 class PendingPostView(TemplateView):
     template_name = 'memories/post_pending.html'
     
@@ -48,29 +48,23 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = EditPostForm
     template_name = 'memories/edit_post.html'
     def form_valid(self, form):
-        form.instance.title = self.object.title  
-        form.instance.slug = self.object.slug
-        form.instance.author = self.object.author
         messages.success(self.request, f'"{self.object.title}" has been successfully updated.')
         return super().form_valid(form)
     def test_func(self):
-        post = self.get_object()
-        return self.request.user == post.author
+        return self.request.user == self.get_object().author
     def handle_no_permission(self):
         messages.error(self.request, "You do not have permission to edit this post.")
         return redirect('home')
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
     
-
 class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'memories/delete_post.html'
-    success_url = reverse_lazy('memories') 
+    success_url = reverse_lazy('memories')
     def delete(self, request, *args, **kwargs):
-        response = super().delete(request, *args, **kwargs)
-        messages.success(request, f'"{self.object.title}" has been successfully deleted.')
-        return response
+        messages.success(request, f'"{self.get_object().title}" has been successfully deleted.')
+        return super().delete(request, *args, **kwargs)
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
@@ -94,11 +88,9 @@ def post_detail(request, slug):
             comment.post = post
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS,'Comment submitted and awaiting approval'
-    )
+                request, messages.SUCCESS,'Comment submitted and awaiting approval')
             # Redirect to avoid form resubmission
             return HttpResponseRedirect(request.path_info)
-
   
     comment_form = CommentForm()
 
@@ -124,19 +116,21 @@ class EditComment(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.post.slug])
-
 class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comment
     template_name = 'memories/delete_comment.html'
     def test_func(self):
+        # Ensure only the comment author can delete the comment
         comment = self.get_object()
         return self.request.user == comment.author
     def delete(self, request, *args, **kwargs):
+        # Add a success message and call the parent method
         messages.success(self.request, "Your comment has been deleted.")
         return super().delete(request, *args, **kwargs)
     def get_success_url(self):
+        # Redirect to the post's detail page
         return reverse('post_detail', args=[self.object.post.slug])
-
+    
 class FavouritesListView(LoginRequiredMixin, ListView):
     model = Favourite
     template_name = "memories/favourites_list.html"
