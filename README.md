@@ -17,25 +17,25 @@ A heartfelt memorial blog designed to preserve the cherished memories of a paren
    - [Typography](#typography)
    - [Components](#components)
    - [Wireframe](#wireframe)
-4. [Entity-Relationship Diagram](#entity-relationship-diagram)
-5. [Agile Workflow](#agile-workflow)
+   - [Entity-Relationship Diagram](#entity-relationship-diagram)
+4. [Agile Workflow](#agile-workflow)
    - [Epics and User Stories](#epics-and-user-stories)
    - [GitHub Project Boards](#github-project-boards)
    - [MoSCoW Prioritization](#moscow-prioritization)
    - [Story Points](#story-points)
-6. [Project Milestones](#project-milestones)
-7. [Features](#features)
+   - [Project Milestones](#project-milestones)
+5. [Features](#features)
    - [Existing Features](#existing-features)
    - [Future Implementations](#future-implementations)
-8. [Technologies](#technologies)
+6. [Technologies](#technologies)
    - [Programming Languages](#programming-languages)
    - [Applications and Libraries](#applications-and-libraries)
-9. [Local Development & Deployment](#local-development--deployment)
+7. [Local Development & Deployment](#local-development--deployment)
    - [Local Development](#local-development)
    - [Heroku Deployment](#heroku-deployment)
    - [Environment Variables](#environment-variables)
-10. [Testing](#testing)
-11. [Credits](#credits)
+8. [Testing](#testing)
+9. [Credits](#credits)
     - [Code Used and Tutorials](#code-used-and-tutorials)
     - [Acknowledgments](#acknowledgments)
 
@@ -137,11 +137,11 @@ The site is designed to capture the essence of the parent through the eyes of th
 ### Colour Scheme <a name="colour-scheme"></a>
 The website employs a calming and emotionally resonant color palette that reflects the essence of memory preservation and warmth:
 
-- **Primary Colors**: [![Calm Green](https://img.shields.io/badge/Calm%20Green-%23188181?style=flat-square&color=188181)](#) (`#188181`) as the main accent, accompanied by a darker shade for hover effects (`#0f5555`), symbolizing growth and renewal.  
+- **Primary Colors**: [![Calm Green](https://img.shields.io/badge/Calm%20Green-%23188181?style=flat-square&color=188181)](#) (`#188181`) as the main accent, accompanied by a [![Darker Shade of Shade](https://img.shields.io/badge/Darker%20Calm%20Green-%230f5555?style=flat-square&color=0f5555)](#) for hover effects (`#0f5555`), symbolizing growth and renewal.  
 - **Text Colors**: [![Dark Grey](https://img.shields.io/badge/Dark%20Grey-%23333333?style=flat-square&color=333333)](#) (`#333333`) for readability, and [![White](https://img.shields.io/badge/White-%23ffffff?style=flat-square&color=ffffff)](#) (`#ffffff`) for contrast and clarity in light-on-dark contexts.  
 - **Background Colors**: [![Light Grey](https://img.shields.io/badge/Light%20Grey-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`) for a gentle feel, paired with [![Deep Navy](https://img.shields.io/badge/Deep%20Navy-%230d1b2a?style=flat-square&color=0d1b2a)](#) (`#0d1b2a`) for a grounded, introspective backdrop.  
 - **Accent Colors**: [![Warm Yellow](https://img.shields.io/badge/Yellow-%23ffcc00?style=flat-square&color=ffcc00)](#) (`#ffcc00`) for highlights, transitioning to a [![Soft Orange](https://img.shields.io/badge/Soft%20Orange-%23ffa500?style=flat-square&color=ffa500)](#) (`#ffa500`) on hover, evoking feelings of joy and hope.  
-- **Borders**: Subtle light grey borders (`#e0e0e0`) and dividers (`#f5f5f5`) add structure without overwhelming the design.
+- **Borders**: Subtle [![Light Grey](https://img.shields.io/badge/Light%20Grey%20Border-%23e0e0e0?style=flat-square&color=e0e0e0)](#) borders (`#e0e0e0`) and [![Dividers](https://img.shields.io/badge/Subtle%20Divider-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`) add structure without overwhelming the design.
 
 ### Typography <a name="typography"></a>
 Typography choices prioritize both elegance and readability to suit the emotional nature of the website:  
@@ -165,78 +165,328 @@ The website's components are designed for a seamless user experience while empha
 ### Wireframe <a name="wireframe"></a>
 Provide links or images of the wireframes.
 
----
-
-## Entity-Relationship Diagram <a name="entity-relationship-diagram"></a>
+### Entity-Relationship Diagram <a name="entity-relationship-diagram"></a>
 Include an image or description of the ER diagram used for database modeling.
 
 ---
 
 ## Agile Workflow <a name="agile-workflow"></a>
 
+This project was developed using agile methodologies to ensure a systematic and iterative approach to achieving project goals. Here’s an overview of how the workflow was structured:
+
+---
+
 ### Epics and User Stories <a name="epics-and-user-stories"></a>
-Details about epics and how user stories were mapped to them.
+
+**Epics**  
+The foundation of the project was laid out through clearly defined epics that represented the main goals or themes. Each epic provided a broad outline, which helped guide the project's overall vision.  
+- [Link to Epics on GitHub](#)
+
+**User Stories**  
+Epics were broken down into user stories to capture user-centric functionality and provide actionable objectives. Each user story was documented as an issue in GitHub and included:  
+- A clear description from the user's perspective.  
+- Comprehensive acceptance criteria to define the "done" state.  
+
+**Tasks**  
+User stories were further subdivided into tasks, which were tracked as checklist items within their respective GitHub issues. This granular breakdown ensured every user story met the criteria and was delivered successfully.  
+- [Link to User Stories on GitHub](#)
+- A screenshot of a GitHub issue showing the user story, its acceptance criteria, and linked tasks.
+
+---
 
 ### GitHub Project Boards <a name="github-project-boards"></a>
-Link to or describe how GitHub Project Boards were utilized.
+
+To manage and visualize the project's progress, GitHub Project Boards were utilized extensively:  
+
+**Kanban Board**  
+The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "Backlog," "In Progress," and "Done." This facilitated effective task tracking and milestone management.  
+- [Link to Kanban Board](#)
+- A full view of the Kanban board showing the progression of tasks across columns.
+
+**User Stories Board**  
+A project board was also used to group user stories by epics and prioritize them. This ensured the alignment of individual tasks with broader project goals.  
+- [Link to User Stories Project Board](#)
+- The user stories project board highlighting epics and their corresponding user stories.
+
+---
 
 ### MoSCoW Prioritization <a name="moscow-prioritization"></a>
-Details on how features were prioritized.
+
+The MoSCoW prioritization method was employed to classify tasks and user stories based on their importance to the project.  
+
+- **Must Have**: Essential features required for the MVP milestone.  
+- **Should Have**: Important but not critical tasks included based on time and resources.  
+- **Could Have**: Desirable enhancements for future updates.  
+
+Each GitHub issue was labeled with its MoSCoW priority, ensuring a focus on delivering essential functionalities first.  
+- A GitHub issue labeled with its MoSCoW priority.
+
+---
 
 ### Story Points <a name="story-points"></a>
-Explain how story points were used for task estimation.
+
+Tasks and user stories were assigned story points to estimate the effort required for completion. This approach ensured better sprint planning and workload distribution, helping maintain steady progress toward project goals.  
+
+- A GitHub issue showing its assigned story points.
 
 ---
 
-## Project Milestones <a name="project-milestones"></a>
-List key project milestones and their completion status.
+### Project Milestones <a name="project-milestones"></a>
+
+**MVP Milestone**  
+The MVP milestone included all the core functionalities required for the project's initial release. It was the primary focus during the initial sprints.  
+- [Link to MVP Milestone on GitHub](#)
+
+**Post-MVP and Enhancements**  
+Subsequent milestones will cover enhancements and additional features that improved the project's overall functionality.  
 
 ---
 
-## Features <a name="features"></a>
+# Features <a name="features"></a>
 
-### Existing Features <a name="existing-features"></a>
-Detailed description of the implemented features.
+## Existing Features <a name="existing-features"></a>
 
-### Future Implementations <a name="future-implementations"></a>
-List features planned for future releases.
+1. **User Authentication**  
+   - **Sign Up**: New users can create an account to access personalized features.  
+   - **Login**: Registered users can log in to access their account.  
+   - **Logout**: Securely log out of the application.  
+   - **Authentication-Based Navigation**: Dynamic navigation menu updates based on the user's authentication state.
+
+2. **Memories Management**  
+   - **Recent Memories**: Displays the three most recent posts on the home page for quick access.  
+   - **View All Memories**: Explore the complete list of memories shared by users.  
+   - **Individual Memory Details**: View detailed content of each memory, including author and creation date.
+
+3. **Favorites Feature**  
+   - **Add to Favorites**: Users can add a memory to their favorites for easy future access.  
+   - **View Favorites**: Dedicated page for viewing all favorited memories.  
+   - **Remove from Favorites**: Option to remove a memory from the favorites list.
+
+4. **Memory Creation and Management**  
+   - **Create Memory**: Authenticated users can contribute by sharing their memories.  
+   - **Edit Memory**: Authors can edit their submitted memories.  
+   - **Delete Memory**: Authors have the ability to delete their own memories.
+
+5. **Comment System**  
+   - **Add Comments**: Logged-in users can comment on individual memory posts.  
+   - **Edit Comments**: Users can modify their submitted comments.  
+   - **Delete Comments**: Users can delete their own comments.  
+   - **Comment Moderation**: Comments require approval before being displayed (optional).
+
+6. **Pagination**  
+   - Easily navigate through multiple pages of memories for better user experience.
+
+7. **Responsive Design**  
+   - Fully responsive layout using Bootstrap, ensuring a seamless experience across devices.
+
+8. **Alerts and Feedback**  
+   - Dynamic feedback messages (e.g., success or error alerts) for actions such as login, memory submission, and comments.
+
+9. **Dynamic Navigation Bar**  
+   - Automatically highlights the active page to improve user navigation.
+
+10. **Enhanced Visuals**  
+    - Custom styles and design for an engaging user experience.  
+    - Integrated Google Fonts and Font Awesome icons for a polished look.
+
+11. **Search and Filter** (if applicable)  
+    - Search or filter memories based on keywords or categories. (Include if implemented or planned.)
+
+12. **Accessibility**  
+    - Focus on accessibility with semantic HTML and ARIA attributes for assistive technologies.  
 
 ---
 
-## Technologies <a name="technologies"></a>
+## Planned Features <a name="planned-features"></a>
 
-### Programming Languages <a name="programming-languages"></a>
-List the programming languages used in the project.
+- **User Profiles**: Allow users to customize their profiles with bio and profile pictures.  
+- **Search and Filtering**: Implement advanced search functionality to locate memories easily.  
+- **Tagging System**: Add tags to memories for better organization and categorization.  
+- **Social Sharing**: Enable users to share memories on social media platforms.  
+- **Email Notifications**: Notify users about updates like new comments on their posts.  
+- **Dark Mode**: Provide an option to switch between light and dark themes.
 
-### Applications and Libraries <a name="applications-and-libraries"></a>
-List the main libraries and tools with their purpose.
+
+---
+
+## Technologies Used <a name="technologies"></a>
+
+### Programming Languages
+
+[![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML)  
+Used to structure the application's main pages, including the layout of memories, user forms, and error pages.
+
+[![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS)  
+Employed to style the application's front-end, enhancing the visual appeal and user experience through thoughtful design.
+
+[![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com)  
+Implemented to add interactivity to the app, such as dynamic form validation and user feedback.
+
+[![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org/)  
+Used as the server-side programming language for building the back-end logic with Django.
+
+---
+
+### Applications and Libraries
+
+[![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com/)  
+A high-level Python web framework used to create the main application structure and functionality.
+
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=336791)](https://www.postgresql.org/)  
+An advanced, open-source object-relational database system for storing the application’s data.
+
+[![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com)  
+Used for version control to track code changes and collaborate efficiently.
+
+[![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com)  
+Hosts the project repository and facilitates collaboration and version tracking.
+
+[![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io)  
+A cloud-based IDE used for writing and debugging code efficiently in a pre-configured development environment.
+
+[![Gunicorn](https://img.shields.io/badge/Gunicorn-grey?logo=gunicorn&logoColor=499848)](https://gunicorn.org/)  
+A Python WSGI HTTP server used to deploy the application.
+
+[![Whitenoise](https://img.shields.io/badge/Whitenoise-grey?logo=htmx&logoColor=ffffff)](http://whitenoise.evans.io/)  
+Serves static files directly from Django, simplifying deployment and improving performance.
+
+[![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com/)  
+A platform used to deploy the web application and make it accessible online.
+
+[![Shields.io](https://img.shields.io/badge/Shields.io-grey?logo=shields&logoColor=000000)](https://shields.io/)  
+Utilized for creating badges to enhance the README documentation.
+
+[![TinyPNG](https://img.shields.io/badge/TinyPNG-grey?logo=png&logoColor=ffffff)](https://tinypng.com/)  
+Optimizes image file sizes to improve web performance.
+
+[![DrawSQL](https://img.shields.io/badge/DrawSQL-grey?logo=drawsql&logoColor=000000)](https://drawsql.app/)  
+Helps design and visualize the database schema through Entity-Relationship Diagrams (ERD).
+
+[![Psycopg2](https://img.shields.io/badge/Psycopg2-grey?logo=postgresql&logoColor=336791)](https://www.psycopg.org/)  
+A PostgreSQL adapter for Python used for database interaction.
+
+[![Dj Database URL](https://img.shields.io/badge/Dj--Database--URL-grey?logo=django&logoColor=092E20)](https://github.com/jacobian/dj-database-url)  
+Simplifies database configuration by parsing the `DATABASE_URL` environment variable.
+
+[![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=balsamiq&logoColor=000000)](https://balsamiq.com/wireframes/)  
+Used to create wireframes and mockups for planning the layout and design of the application.
 
 ---
 
 ## Local Development & Deployment <a name="local-development--deployment"></a>
 
 ### Local Development <a name="local-development"></a>
-Instructions on how to set up the project locally.
+Follow these steps to set up the project locally:
+
+1. **Clone the Repository**:  
+   - Open the repository on GitHub, click the "Code" button, and copy the repository URL.  
+   - In your terminal, navigate to the directory where you want to clone the project and type:  
+     ```bash
+     git clone <repository_url>
+     ```
+2. **Set Up a Virtual Environment (Optional)**:  
+   - Create a virtual environment:  
+     ```bash
+     python3 -m venv [virtual_environment_name]
+     ```  
+   - Activate the virtual environment:  
+     - On Windows:  
+       ```bash
+       [virtual_environment_name]\Scripts\activate
+       ```  
+     - On macOS/Linux:  
+       ```bash
+       source [virtual_environment_name]/bin/activate
+       ```  
+3. **Install Dependencies**:  
+   - Navigate to the project directory and install the required dependencies:  
+     ```bash
+     pip install -r requirements.txt
+     ```
+4. **Set Environment Variables**:  
+   - Create a `.env` file in the project root directory and add the required variables (see [Environment Variables](#environment-variables) section).
+5. **Database Setup**:  
+   - Connect your database and apply migrations:  
+     ```bash
+     python manage.py migrate
+     ```
+   - Create a superuser for the admin panel:  
+     ```bash
+     python manage.py createsuperuser
+     ```
+6. **Load Fixtures (Optional)**:  
+   - Populate the database with pre-defined data (if available):  
+     ```bash
+     python manage.py loaddata fixtures/[fixture_name].json
+     ```
+7. **Run the Development Server**:  
+   - Start the server:  
+     ```bash
+     python manage.py runserver
+     ```  
+   - Open the URL provided in the terminal in your browser.
+
+---
 
 ### Heroku Deployment <a name="heroku-deployment"></a>
-Details about the deployment process on Heroku.
+Deploy the application to Heroku by following these steps:
+
+1. **Prepare the Repository**:  
+   - Ensure your project is pushed to a GitHub repository.
+2. **Create a Heroku App**:  
+   - Log in to the Heroku dashboard and create a new app.  
+   - Specify the app name and region.
+3. **Connect GitHub Repository**:  
+   - In the **Deploy** tab, choose GitHub as the deployment method.  
+   - Search for your repository and connect it.
+4. **Add Buildpacks**:  
+   - Navigate to the **Settings** tab.  
+   - Under Buildpacks, add **Python**. Ensure it appears in the correct order.
+5. **Set Environment Variables**:  
+   - In the **Config Vars** section of the **Settings** tab, add the required variables (see [Environment Variables](#environment-variables) section).
+6. **Deploy the Application**:  
+   - In the **Deploy** tab, choose the branch to deploy (usually `main`).  
+   - Enable automatic deploys or manually click **Deploy Branch**.
+7. **Access the Deployed App**:  
+   - Once deployment is complete, click **Open App** to view your live application.
+
+---
 
 ### Environment Variables <a name="environment-variables"></a>
-List the environment variables needed and their purpose.
+The project requires the following environment variables:
+
+- **SECRET_KEY**: A long, random string used for cryptographic signing in your application.  
+- **DEBUG**: Set to `True` for local development and `False` for production.  
+- **DATABASE_URL**: The URL of your database, including credentials and connection details.  
+  Example: `postgres://USER:PASSWORD@HOST:PORT/DB_NAME`.  
+- **CLOUDINARY_URL**: The URL for your Cloudinary account.  
+  Example: `cloudinary://API_KEY:API_SECRET@CLOUD_NAME`.  
+- **CUSTOM_ENV_VAR**: (Replace with any project-specific variables).  
+
+> **Note**: Ensure the `.env` file is added to `.gitignore` to avoid exposing sensitive information in your version control system. For Heroku deployment, set these variables in the Config Vars section on the dashboard.
+
 
 ---
 
 ## Testing <a name="testing"></a>
-Describe the testing methodologies, tools used, and include test cases if applicable.
+For a comprehensive guide to both manual and automated testing procedures, please check out [TESTING.md](./TESTING.md) It provides an in-depth look at all the testing scenarios and approaches implemented in the project.
 
 ---
 
 ## Credits <a name="credits"></a>
 
-### Code Used and Tutorials <a name="code-used-and-tutorials"></a>
-Links to code snippets and tutorials used.
+### Code Used and Tutorials 
+- **Code Institute: Developing With Django**  
+  This series from Code Institute provided a strong foundation for understanding the Django framework. It guided me through the process of building and deploying a Django app to Heroku.
 
-### Acknowledgments <a name="acknowledgments"></a>
-Mention any contributors or resources that were instrumental to the project.
+- **[YouTube Tutorials](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)**  
+  I referred to several videos from this playlist to learn how to implement various features in a Django blog. Some sections of my code are inspired by the examples demonstrated in these videos.
+
+### Media and Content 
+- **Images**: All images used in this project are from my personal collection.  
+- **Content**: Blog content (fixtures) was created using ChatGPT to efficiently generate complete and polished blog posts.
+
+### Acknowledgments 
+A special thanks to **Medale Oluwafemi**, my mentor at Code Institute, for his invaluable guidance and support throughout this project.
 
 ---
