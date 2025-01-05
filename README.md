@@ -36,8 +36,6 @@ A heartfelt memorial blog designed to preserve the cherished memories of a paren
    - [Environment Variables](#environment-variables)
 8. [Testing](#testing)
 9. [Credits](#credits)
-    - [Code Used and Tutorials](#code-used-and-tutorials)
-    - [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -135,13 +133,28 @@ The site is designed to capture the essence of the parent through the eyes of th
 ## Design <a name="design"></a>
 
 ### Colour Scheme <a name="colour-scheme"></a>
-The website employs a calming and emotionally resonant color palette that reflects the essence of memory preservation and warmth:
 
-- **Primary Colors**: [![Calm Green](https://img.shields.io/badge/Calm%20Green-%23188181?style=flat-square&color=188181)](#) (`#188181`) as the main accent, accompanied by a [![Darker Shade of Shade](https://img.shields.io/badge/Darker%20Calm%20Green-%230f5555?style=flat-square&color=0f5555)](#) for hover effects (`#0f5555`), symbolizing growth and renewal.  
-- **Text Colors**: [![Dark Grey](https://img.shields.io/badge/Dark%20Grey-%23333333?style=flat-square&color=333333)](#) (`#333333`) for readability, and [![White](https://img.shields.io/badge/White-%23ffffff?style=flat-square&color=ffffff)](#) (`#ffffff`) for contrast and clarity in light-on-dark contexts.  
-- **Background Colors**: [![Light Grey](https://img.shields.io/badge/Light%20Grey-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`) for a gentle feel, paired with [![Deep Navy](https://img.shields.io/badge/Deep%20Navy-%230d1b2a?style=flat-square&color=0d1b2a)](#) (`#0d1b2a`) for a grounded, introspective backdrop.  
-- **Accent Colors**: [![Warm Yellow](https://img.shields.io/badge/Yellow-%23ffcc00?style=flat-square&color=ffcc00)](#) (`#ffcc00`) for highlights, transitioning to a [![Soft Orange](https://img.shields.io/badge/Soft%20Orange-%23ffa500?style=flat-square&color=ffa500)](#) (`#ffa500`) on hover, evoking feelings of joy and hope.  
-- **Borders**: Subtle [![Light Grey](https://img.shields.io/badge/Light%20Grey%20Border-%23e0e0e0?style=flat-square&color=e0e0e0)](#) borders (`#e0e0e0`) and [![Dividers](https://img.shields.io/badge/Subtle%20Divider-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`) add structure without overwhelming the design.
+The website uses a calming and emotionally resonant color palette to reflect the essence of memory preservation and warmth:
+
+- **Primary Colors**:  
+  - [![Calm Green](https://img.shields.io/badge/Calm%20Green-%23188181?style=flat-square&color=188181)](#) (`#188181`): Serves as the main accent color, symbolizing growth and renewal.  
+  - [![Darker Calm Green](https://img.shields.io/badge/Darker%20Calm%20Green-%230f5555?style=flat-square&color=0f5555)](#) (`#0f5555`): Used for hover effects to complement the primary accent.  
+
+- **Text Colors**:  
+  - [![Dark Grey](https://img.shields.io/badge/Dark%20Grey-%23333333?style=flat-square&color=333333)](#) (`#333333`): Ensures readability and a clean appearance.  
+  - [![White](https://img.shields.io/badge/White-%23ffffff?style=flat-square&color=ffffff)](#) (`#ffffff`): Provides contrast for light-on-dark text contexts.  
+
+- **Background Colors**:  
+  - [![Light Grey](https://img.shields.io/badge/Light%20Grey-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`): Creates a soft and gentle background feel.  
+  - [![Deep Navy](https://img.shields.io/badge/Deep%20Navy-%230d1b2a?style=flat-square&color=0d1b2a)](#) (`#0d1b2a`): Provides a grounded and introspective backdrop.  
+
+- **Accent Colors**:  
+  - [![Warm Yellow](https://img.shields.io/badge/Warm%20Yellow-%23ffcc00?style=flat-square&color=ffcc00)](#) (`#ffcc00`): Adds vibrant highlights to key elements.  
+  - [![Soft Orange](https://img.shields.io/badge/Soft%20Orange-%23ffa500?style=flat-square&color=ffa500)](#) (`#ffa500`): Enhances hover effects with a warm, hopeful tone.  
+
+- **Borders and Dividers**:  
+  - [![Light Grey Border](https://img.shields.io/badge/Light%20Grey-%23e0e0e0?style=flat-square&color=e0e0e0)](#) (`#e0e0e0`): Subtle borders add structure without distracting from the design.  
+  - [![Divider](https://img.shields.io/badge/Divider-%23f5f5f5?style=flat-square&color=f5f5f5)](#) (`#f5f5f5`): Ensures a clean and polished layout.
 
 ### Typography <a name="typography"></a>
 Typography choices prioritize both elegance and readability to suit the emotional nature of the website:  
@@ -163,10 +176,20 @@ The website's components are designed for a seamless user experience while empha
 
 
 ### Wireframe <a name="wireframe"></a>
-Provide links or images of the wireframes.
+The [wireframes](./readme_images/wireframes.pdf) have been designed to provide a visual representation of each page's layout and functionality.
 
 ### Entity-Relationship Diagram <a name="entity-relationship-diagram"></a>
-Include an image or description of the ER diagram used for database modeling.
+
+![ERD](./readme_images/ERD.png)
+
+This ER diagram models a blogging platform with four main entities:
+
+- **User**: Represents users with attributes like username, password, and email.  
+- **Post**: Represents blog posts authored by users, with attributes like title, content, and creation dates.  
+- **Comment**: Tracks comments made by users on posts, storing content and timestamps.  
+- **Favourites**: Tracks posts marked as favorites by users.  
+
+The diagram illustrates relationships between these entities, such as users creating posts, commenting on them, and marking them as favorites.
 
 ---
 
@@ -179,36 +202,29 @@ This project was developed using agile methodologies to ensure a systematic and 
 ### Epics and User Stories <a name="epics-and-user-stories"></a>
 
 **Epics**  
-The foundation of the project was laid out through clearly defined epics that represented the main goals or themes. Each epic provided a broad outline, which helped guide the project's overall vision.  
-- [Link to Epics on GitHub](#)
+The foundation of the project was laid out through clearly defined epics that represented the main goals or themes. Each epic provided an outline, which helped guide the project's overall vision.  
+<br>
+- Example of an epic:
+![Epic Example](./readme_images/epic_example.png)
 
 **User Stories**  
 Epics were broken down into user stories to capture user-centric functionality and provide actionable objectives. Each user story was documented as an issue in GitHub and included:  
-- A clear description from the user's perspective.  
-- Comprehensive acceptance criteria to define the "done" state.  
+- A clear **description** from the user's perspective.  
+- Comprehensive **acceptance criteria** to define the "done" state.  
+- **Tasks:** user stories were further subdivided into tasks, which were tracked as checklist items within their respective GitHub issues. This granular breakdown ensured every user story met the criteria and was delivered successfully.  
+<br>
+- Example of a user story:
+![User Story Example](./readme_images/user_story_example.png)
 
-**Tasks**  
-User stories were further subdivided into tasks, which were tracked as checklist items within their respective GitHub issues. This granular breakdown ensured every user story met the criteria and was delivered successfully.  
-- [Link to User Stories on GitHub](#)
-- A screenshot of a GitHub issue showing the user story, its acceptance criteria, and linked tasks.
-
----
 
 ### GitHub Project Boards <a name="github-project-boards"></a>
 
 To manage and visualize the project's progress, GitHub Project Boards were utilized extensively:  
 
 **Kanban Board**  
-The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "Backlog," "In Progress," and "Done." This facilitated effective task tracking and milestone management.  
-- [Link to Kanban Board](#)
-- A full view of the Kanban board showing the progression of tasks across columns.
-
-**User Stories Board**  
-A project board was also used to group user stories by epics and prioritize them. This ensured the alignment of individual tasks with broader project goals.  
-- [Link to User Stories Project Board](#)
-- The user stories project board highlighting epics and their corresponding user stories.
-
----
+The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "To do," "In Progress," and "Done." This facilitated effective task tracking and milestone management.  
+[Kanban Board](https://github.com/users/justynath/projects/10)
+![Kanban Board](./readme_images/kanban.png)
 
 ### MoSCoW Prioritization <a name="moscow-prioritization"></a>
 
@@ -219,23 +235,13 @@ The MoSCoW prioritization method was employed to classify tasks and user stories
 - **Could Have**: Desirable enhancements for future updates.  
 
 Each GitHub issue was labeled with its MoSCoW priority, ensuring a focus on delivering essential functionalities first.  
-- A GitHub issue labeled with its MoSCoW priority.
-
----
-
-### Story Points <a name="story-points"></a>
-
-Tasks and user stories were assigned story points to estimate the effort required for completion. This approach ensured better sprint planning and workload distribution, helping maintain steady progress toward project goals.  
-
-- A GitHub issue showing its assigned story points.
-
----
+![MoSCoW prioritization](./readme_images/moscow.png)
 
 ### Project Milestones <a name="project-milestones"></a>
 
 **MVP Milestone**  
 The MVP milestone included all the core functionalities required for the project's initial release. It was the primary focus during the initial sprints.  
-- [Link to MVP Milestone on GitHub](#)
+![MVP Milestone](./readme_images/MVP.png)
 
 **Post-MVP and Enhancements**  
 Subsequent milestones will cover enhancements and additional features that improved the project's overall functionality.  
@@ -248,52 +254,65 @@ Subsequent milestones will cover enhancements and additional features that impro
 
 1. **User Authentication**  
    - **Sign Up**: New users can create an account to access personalized features.  
+   ![Signup](./readme_images/signup.png)
    - **Login**: Registered users can log in to access their account.  
+   ![Login](./readme_images/login.png)
    - **Logout**: Securely log out of the application.  
+   ![Logout](./readme_images/logout.png)
    - **Authentication-Based Navigation**: Dynamic navigation menu updates based on the user's authentication state.
 
 2. **Memories Management**  
-   - **Recent Memories**: Displays the three most recent posts on the home page for quick access.  
+   - **Recent Memories**: Displays the three most recent posts on the home page for quick access. 
+   ![Recent Memories](./readme_images/recent_memories.png) 
    - **View All Memories**: Explore the complete list of memories shared by users.  
+   ![All Memories](./readme_images/all_memories.png)
    - **Individual Memory Details**: View detailed content of each memory, including author and creation date.
+   ![Memory](./readme_images/memory.png)
 
 3. **Favorites Feature**  
    - **Add to Favorites**: Users can add a memory to their favorites for easy future access.  
+   ![Add Favourite](./readme_images/add_favourite.png)
    - **View Favorites**: Dedicated page for viewing all favorited memories.  
+   ![Favourite Memories](./readme_images/favourites.png)
    - **Remove from Favorites**: Option to remove a memory from the favorites list.
+   ![Remove Favourite](./readme_images/remove_favourite.png)
 
 4. **Memory Creation and Management**  
    - **Create Memory**: Authenticated users can contribute by sharing their memories.  
+   ![Create Memory](./readme_images/create_memory_1.png)
+   ![Create Memory](./readme_images/create_memory_2.png)
    - **Edit Memory**: Authors can edit their submitted memories.  
+   ![Edit Memory](./readme_images/edit_memory_1.png)
+   ![Edit Memory](./readme_images/edit_memory_2.png)
    - **Delete Memory**: Authors have the ability to delete their own memories.
+   ![Delete Memory](./readme_images/delete_memory.png)
 
 5. **Comment System**  
    - **Add Comments**: Logged-in users can comment on individual memory posts.  
+   ![Add Comment](./readme_images/add_comment.png)
+   - **Comment Moderation**: Comments require approval before being displayed.
+   ![Display Comment](./readme_images/show_comment.png)
    - **Edit Comments**: Users can modify their submitted comments.  
+   ![Edit Comment](./readme_images/edit_comment.png)
    - **Delete Comments**: Users can delete their own comments.  
-   - **Comment Moderation**: Comments require approval before being displayed (optional).
+   ![Delete Comment](./readme_images/delete_comment.png)
+
 
 6. **Pagination**  
    - Easily navigate through multiple pages of memories for better user experience.
+   ![Pagination](./readme_images/pagination.png)
 
-7. **Responsive Design**  
-   - Fully responsive layout using Bootstrap, ensuring a seamless experience across devices.
-
-8. **Alerts and Feedback**  
+7. **Alerts and Feedback**  
    - Dynamic feedback messages (e.g., success or error alerts) for actions such as login, memory submission, and comments.
 
-9. **Dynamic Navigation Bar**  
+8. **Dynamic Navigation Bar**  
    - Automatically highlights the active page to improve user navigation.
+   ![Navbar User](./readme_images/navbar_1.png)
+   ![Navbar Register User](./readme_images/navbar_2.png)
 
-10. **Enhanced Visuals**  
-    - Custom styles and design for an engaging user experience.  
-    - Integrated Google Fonts and Font Awesome icons for a polished look.
-
-11. **Search and Filter** (if applicable)  
-    - Search or filter memories based on keywords or categories. (Include if implemented or planned.)
-
-12. **Accessibility**  
-    - Focus on accessibility with semantic HTML and ARIA attributes for assistive technologies.  
+9. **Simple Footer**
+   - Footer adding a personal touch.
+   ![Footer](./readme_images/footer.png)
 
 ---
 
@@ -461,7 +480,6 @@ The project requires the following environment variables:
   Example: `postgres://USER:PASSWORD@HOST:PORT/DB_NAME`.  
 - **CLOUDINARY_URL**: The URL for your Cloudinary account.  
   Example: `cloudinary://API_KEY:API_SECRET@CLOUD_NAME`.  
-- **CUSTOM_ENV_VAR**: (Replace with any project-specific variables).  
 
 > **Note**: Ensure the `.env` file is added to `.gitignore` to avoid exposing sensitive information in your version control system. For Heroku deployment, set these variables in the Config Vars section on the dashboard.
 
@@ -481,6 +499,9 @@ For a comprehensive guide to both manual and automated testing procedures, pleas
 
 - **[YouTube Tutorials](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)**  
   I referred to several videos from this playlist to learn how to implement various features in a Django blog. Some sections of my code are inspired by the examples demonstrated in these videos.
+
+- ChatGPT and Stack Overflow were used for researching errors and finding suggestions to fix bugs.
+
 
 ### Media and Content 
 - **Images**: All images used in this project are from my personal collection.  

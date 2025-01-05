@@ -38,5 +38,5 @@
 
 .delete-post-section .btn-delete:hover {
     background-color: #c62828; /* Darker red for hover */
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
 }

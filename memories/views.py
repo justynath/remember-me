@@ -122,20 +122,13 @@ class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin
     model = Comment
     template_name = 'memories/delete_comment.html'
     success_message = "Your comment has been deleted."
-
-    def form_valid(self, form):
-        messages.success(self.request, self.success_message)
-        return super().form_valid(form)
-
     def test_func(self):
         comment = self.get_object()
         return self.request.user == comment.author
-
     def get_success_url(self):
         # Redirect to the post's detail page
         return reverse('post_detail', args=[self.object.post.slug])
-
-    
+ 
 class FavouritesListView(LoginRequiredMixin, ListView):
     model = Favourite
     template_name = "memories/favourites_list.html"
