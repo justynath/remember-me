@@ -307,6 +307,8 @@ Subsequent milestones will cover enhancements and additional features that impro
 
 7. **Alerts and Feedback**  
 - Dynamic feedback messages (e.g., success or error alerts) for actions such as login, memory submission, and comments.
+- Example of a SUCCESS message:
+![Success Message](./readme_images/message.png)
 
 8. **Dynamic Navigation Bar**  
 - Automatically highlights the active page to improve user navigation.

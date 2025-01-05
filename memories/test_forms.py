@@ -1,9 +1,8 @@
 from django.test import TestCase
-from .forms import CommentForm, PostForm
 from django.core.files.uploadedfile import SimpleUploadedFile  # For file uploads
 from django import forms  # To access form widgets like TextInput
 from django_summernote.widgets import SummernoteWidget
-
+from .forms import CommentForm, PostForm
 
 # Create your tests here.
 
