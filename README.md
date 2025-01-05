@@ -18,13 +18,12 @@ A heartfelt memorial blog designed to preserve the cherished memories of a paren
    - [Colour Scheme](#colour-scheme)
    - [Typography](#typography)
    - [Components](#components)
-   - [Wireframe](#wireframe)
+   - [Wireframes](#wireframes)
    - [Entity-Relationship Diagram](#entity-relationship-diagram)
 4. [Agile Workflow](#agile-workflow)
    - [Epics and User Stories](#epics-and-user-stories)
-   - [GitHub Project Boards](#github-project-boards)
+   - [GitHub Project Board](#github-project-board)
    - [MoSCoW Prioritization](#moscow-prioritization)
-   - [Story Points](#story-points)
    - [Project Milestones](#project-milestones)
 5. [Features](#features)
    - [Existing Features](#existing-features)
@@ -177,7 +176,7 @@ The website's components are designed for a seamless user experience while empha
 7. **Alert System**: Integrated feedback messages for user actions, styled for clarity and prominence without being intrusive.
 
 
-### Wireframe <a name="wireframe"></a>
+### Wireframes <a name="wireframes"></a>
 The [wireframes](./readme_images/wireframes.pdf) have been designed to provide a visual representation of each page's layout and functionality.
 
 ### Entity-Relationship Diagram <a name="entity-relationship-diagram"></a>
@@ -199,13 +198,13 @@ The diagram illustrates relationships between these entities, such as users crea
 
 This project was developed using agile methodologies to ensure a systematic and iterative approach to achieving project goals. Here’s an overview of how the workflow was structured:
 
----
 
 ### Epics and User Stories <a name="epics-and-user-stories"></a>
 
 **Epics**  
 The foundation of the project was laid out through clearly defined epics that represented the main goals or themes. Each epic provided an outline, which helped guide the project's overall vision.  
 <br>
+
 - Example of an epic:
 
 ![Epic Example](./readme_images/epic_example.png)
@@ -216,16 +215,16 @@ Epics were broken down into user stories to capture user-centric functionality a
 - Comprehensive **acceptance criteria** to define the "done" state.  
 - **Tasks:** user stories were further subdivided into tasks, which were tracked as checklist items within their respective GitHub issues. This granular breakdown ensured every user story met the criteria and was delivered successfully.  
 <br>
+
 - Example of a user story:
 
 ![User Story Example](./readme_images/user_story_example.png)
 
 
-### GitHub Project Boards <a name="github-project-boards"></a>
+### GitHub Project Board <a name="github-project-board"></a>
 
-To manage and visualize the project's progress, GitHub Project Boards were utilized extensively:  
+To manage and visualize the project's progress, GitHub **Kanban Board** was utilized extensively:  
 
-**Kanban Board**  
 The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "To do," "In Progress," and "Done." This facilitated effective task tracking and milestone management. 
 <br><br> 
 [Kanban Board](https://github.com/users/justynath/projects/10)
