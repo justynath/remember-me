@@ -1,4 +1,6 @@
 # Remember Me
+![Quote](./readme_images/quote.png)
+[Live Page](https://remember-me-jth-8eebce62c286.herokuapp.com/)
 
 ### **Memorial Blog for a Bereaved Child**
 
@@ -75,58 +77,58 @@ The site is designed to capture the essence of the parent through the eyes of th
 
 ### User Stories <a name="user-stories"></a>
 1. **User Registration and Login** <br>
-   - As a user I want to register and log in so that I can post memories and leave comments.
+- As a user I want to register and log in so that I can post memories and leave comments.
 
 2. **Admin Content Management**
-   - As an admin I want to manage posts and comments so that the content is respectful and appropriate.
+- As an admin I want to manage posts and comments so that the content is respectful and appropriate.
 
 3. **Create a Memory**
-   - As a registered user I want to create a memory so that I can share my personal thoughts and experiences about the child's father.
+- As a registered user I want to create a memory so that I can share my personal thoughts and experiences about the child's father.
 
 4. **Browse Memories**
-   - As a user I want to browse through shared memories so I can read others’ experiences and reflections.
+- As a user I want to browse through shared memories so I can read others’ experiences and reflections.
 
 5. **Leave a Comment**
-   - As a user I can leave a comment on a memory so that I can engage with others' stories.
+- As a user I can leave a comment on a memory so that I can engage with others' stories.
 
 6. **Simple and Visually Appealing Design**
-   - As a user I can experience a simple visually appealing layout so that I feel emotionally connected to the content.
+- As a user I can experience a simple visually appealing layout so that I feel emotionally connected to the content.
 
 7. **Accessibility for All Users**
-   - As a user with accessibility needs I can navigate and use the website easily so that I can access the content effectively.
+- As a user with accessibility needs I can navigate and use the website easily so that I can access the content effectively.
 
 8. **Data Security and Privacy**
-   - As a site user I can trust my information is secure so that I feel comfortable using the platform.
+- As a site user I can trust my information is secure so that I feel comfortable using the platform.
 
 9. **Structured Database Model**
-   - As a developer I can utilise a structured database model so that I manage users posts comments and media files effectively.
+- As a developer I can utilise a structured database model so that I manage users posts comments and media files effectively.
 
 10. **Deploy Site to Cloud**
-   - As a developer I can deploy the site to a cloud platform so that it’s accessible online.
+- As a developer I can deploy the site to a cloud platform so that it’s accessible online.
 
 11. **Helpful Error Messages**
-   - As a user I can see helpful error messages so that I understand what I need to do if something goes wrong.
+- As a user I can see helpful error messages so that I understand what I need to do if something goes wrong.
 
 12. **Functionality Testing**
-   - As a developer I can test the website's functionality so that it works smoothly and without bugs.
+- As a developer I can test the website's functionality so that it works smoothly and without bugs.
 
 13. **Project Documentation**
-   - As a developer I can reference clear project documentation so that contributors can understand the purpose and structure of the project.
+- As a developer I can reference clear project documentation so that contributors can understand the purpose and structure of the project.
 
 14. **Wireframes**
-   - As a developer I can create wireframes so that I have a clear design and guide to follow during the development process.
+- As a developer I can create wireframes so that I have a clear design and guide to follow during the development process.
 
 15. **Adding and Removing Blog Posts from Favourites Page**
-   - As a registered user I want to add and remove blog posts from my favourites page so that I can quickly access the posts I find most valuable or interesting.
+- As a registered user I want to add and remove blog posts from my favourites page so that I can quickly access the posts I find most valuable or interesting.
 
 16. **Editing and Deleting Memory**
-   - As a registered user I want to edit and delete my memories so that I can keep my shared personal thoughts and experiences accurate and relevant.
+- As a registered user I want to edit and delete my memories so that I can keep my shared personal thoughts and experiences accurate and relevant.
 
 17. **Editing and Deleting Comments**
-   - As a user I can edit or delete my own comments on a memory so that I can ensure my contributions are accurate or remove them if necessary.
+- As a user I can edit or delete my own comments on a memory so that I can ensure my contributions are accurate or remove them if necessary.
 
 18. **Error Pages (404 and 500)**
-   - As a user I can see helpful error messages for 404 and 500 errors so that I understand what went wrong and know how to proceed.
+- As a user I can see helpful error messages for 404 and 500 errors so that I understand what went wrong and know how to proceed.
 
 ---
 
@@ -205,6 +207,7 @@ This project was developed using agile methodologies to ensure a systematic and 
 The foundation of the project was laid out through clearly defined epics that represented the main goals or themes. Each epic provided an outline, which helped guide the project's overall vision.  
 <br>
 - Example of an epic:
+
 ![Epic Example](./readme_images/epic_example.png)
 
 **User Stories**  
@@ -214,6 +217,7 @@ Epics were broken down into user stories to capture user-centric functionality a
 - **Tasks:** user stories were further subdivided into tasks, which were tracked as checklist items within their respective GitHub issues. This granular breakdown ensured every user story met the criteria and was delivered successfully.  
 <br>
 - Example of a user story:
+
 ![User Story Example](./readme_images/user_story_example.png)
 
 
@@ -222,7 +226,8 @@ Epics were broken down into user stories to capture user-centric functionality a
 To manage and visualize the project's progress, GitHub Project Boards were utilized extensively:  
 
 **Kanban Board**  
-The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "To do," "In Progress," and "Done." This facilitated effective task tracking and milestone management.  
+The Kanban board provided a real-time overview of the project's status, categorizing tasks into columns such as "To do," "In Progress," and "Done." This facilitated effective task tracking and milestone management. 
+<br><br> 
 [Kanban Board](https://github.com/users/justynath/projects/10)
 ![Kanban Board](./readme_images/kanban.png)
 
@@ -253,66 +258,77 @@ Subsequent milestones will cover enhancements and additional features that impro
 ## Existing Features <a name="existing-features"></a>
 
 1. **User Authentication**  
-   - **Sign Up**: New users can create an account to access personalized features.  
-   ![Signup](./readme_images/signup.png)
-   - **Login**: Registered users can log in to access their account.  
-   ![Login](./readme_images/login.png)
-   - **Logout**: Securely log out of the application.  
-   ![Logout](./readme_images/logout.png)
-   - **Authentication-Based Navigation**: Dynamic navigation menu updates based on the user's authentication state.
+- **Sign Up**: New users can create an account to access personalized features.  
+![Signup](./readme_images/signup.png)
+- **Login**: Registered users can log in to access their account.  
+![Login](./readme_images/login.png)
+- **Logout**: Securely log out of the application.  
+![Logout](./readme_images/logout.png)
 
 2. **Memories Management**  
-   - **Recent Memories**: Displays the three most recent posts on the home page for quick access. 
-   ![Recent Memories](./readme_images/recent_memories.png) 
-   - **View All Memories**: Explore the complete list of memories shared by users.  
-   ![All Memories](./readme_images/all_memories.png)
-   - **Individual Memory Details**: View detailed content of each memory, including author and creation date.
-   ![Memory](./readme_images/memory.png)
+- **Recent Memories**: Displays the three most recent posts on the home page for quick access. 
+![Recent Memories](./readme_images/recent_memories.png) 
+- **View All Memories**: Explore the complete list of memories shared by users.  
+![All Memories](./readme_images/all_memories.png)
+- **Individual Memory Details**: View detailed content of each memory, including author and creation date.
+![Memory](./readme_images/memory.png)
 
 3. **Favorites Feature**  
-   - **Add to Favorites**: Users can add a memory to their favorites for easy future access.  
-   ![Add Favourite](./readme_images/add_favourite.png)
-   - **View Favorites**: Dedicated page for viewing all favorited memories.  
-   ![Favourite Memories](./readme_images/favourites.png)
-   - **Remove from Favorites**: Option to remove a memory from the favorites list.
-   ![Remove Favourite](./readme_images/remove_favourite.png)
+- **Add to Favorites**: Users can add a memory to their favorites for easy future access.  
+![Add Favourite](./readme_images/add_favourite.png)
+- **View Favorites**: Dedicated page for viewing all favorited memories.  
+![Favourite Memories](./readme_images/favourites.png)
+- **Remove from Favorites**: Option to remove a memory from the favorites list.
+![Remove Favourite](./readme_images/remove_favourite.png)
 
 4. **Memory Creation and Management**  
-   - **Create Memory**: Authenticated users can contribute by sharing their memories.  
-   ![Create Memory](./readme_images/create_memory_1.png)
-   ![Create Memory](./readme_images/create_memory_2.png)
-   - **Edit Memory**: Authors can edit their submitted memories.  
-   ![Edit Memory](./readme_images/edit_memory_1.png)
-   ![Edit Memory](./readme_images/edit_memory_2.png)
-   - **Delete Memory**: Authors have the ability to delete their own memories.
-   ![Delete Memory](./readme_images/delete_memory.png)
+- **Create Memory**: Authenticated users can contribute by sharing their memories.  
+![Create Memory](./readme_images/create_memory_1.png)
+![Create Memory](./readme_images/create_memory_2.png)
+- **Edit Memory**: Authors can edit their submitted memories.  
+![Edit Memory](./readme_images/edit_memory_1.png)
+![Edit Memory](./readme_images/edit_memory_2.png)
+- **Delete Memory**: Authors have the ability to delete their own memories.
+![Delete Memory](./readme_images/delete_memory.png)
 
 5. **Comment System**  
-   - **Add Comments**: Logged-in users can comment on individual memory posts.  
-   ![Add Comment](./readme_images/add_comment.png)
-   - **Comment Moderation**: Comments require approval before being displayed.
-   ![Display Comment](./readme_images/show_comment.png)
-   - **Edit Comments**: Users can modify their submitted comments.  
-   ![Edit Comment](./readme_images/edit_comment.png)
-   - **Delete Comments**: Users can delete their own comments.  
-   ![Delete Comment](./readme_images/delete_comment.png)
+- **Add Comments**: Logged-in users can comment on individual memory posts.  
+![Add Comment](./readme_images/add_comment.png)
+- **Comment Moderation**: Comments require approval before being displayed.
+![Display Comment](./readme_images/show_comment.png)
+- **Edit Comments**: Users can modify their submitted comments.  
+![Edit Comment](./readme_images/edit_comment.png)
+- **Delete Comments**: Users can delete their own comments.  
+![Delete Comment](./readme_images/delete_comment.png)
 
 
 6. **Pagination**  
-   - Easily navigate through multiple pages of memories for better user experience.
-   ![Pagination](./readme_images/pagination.png)
+- Easily navigate through multiple pages of memories for better user experience.
+![Pagination](./readme_images/pagination.png)
 
 7. **Alerts and Feedback**  
-   - Dynamic feedback messages (e.g., success or error alerts) for actions such as login, memory submission, and comments.
+- Dynamic feedback messages (e.g., success or error alerts) for actions such as login, memory submission, and comments.
 
 8. **Dynamic Navigation Bar**  
-   - Automatically highlights the active page to improve user navigation.
-   ![Navbar User](./readme_images/navbar_1.png)
-   ![Navbar Register User](./readme_images/navbar_2.png)
+- Automatically highlights the active page to improve user navigation.
+![Navbar User](./readme_images/navbar_1.png)
+![Navbar Register User](./readme_images/navbar_2.png)
 
 9. **Simple Footer**
-   - Footer adding a personal touch.
-   ![Footer](./readme_images/footer.png)
+- Footer adding a personal touch.
+![Footer](./readme_images/footer.png)
+
+10. **Personal Components**
+- Hero image and a quote setting the tone of the website, adding to its reflective mood.  
+![Hero Image](./readme_images/hero.png)
+- About section explains the purpose of the website and provides additional information to the user.  
+![About](./readme_images/about.png)
+
+11. **Share Memory/Sign up Button**
+- The home page features a button to share a memory, which serves as a sign-up button for non-registered users.
+![Home Share Memeory](./readme_images/home_share.png)
+![Home Sign up](./readme_images/home_signup.png)
+
 
 ---
 
@@ -468,6 +484,7 @@ Deploy the application to Heroku by following these steps:
    - Enable automatic deploys or manually click **Deploy Branch**.
 7. **Access the Deployed App**:  
    - Once deployment is complete, click **Open App** to view your live application.
+   [Live Link](https://remember-me-jth-8eebce62c286.herokuapp.com/)
 
 ---
 
