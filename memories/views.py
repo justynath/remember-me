@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, ListView
+from django.views.generic import TemplateView, CreateView, UpdateView
+from django.views.generic import DeleteView, ListView
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -14,13 +15,15 @@ from .forms import CommentForm, PostForm, EditPostForm
 
 # Create your views here.
 
+
 class PostList(generic.ListView):
     """
     View to display a list of published posts on the homepage.
     """
     queryset = Post.objects.filter(status=1)
     template_name = "memories/home.html"
-    
+
+
 class PostLists(generic.ListView):
     """
     View to display a paginated list of published posts on the 'memories' page.
@@ -29,12 +32,14 @@ class PostLists(generic.ListView):
     template_name = "memories/memories.html"
     paginate_by = 6
 
+
 class AboutView(TemplateView):
     """
     View to display the 'About' page.
     """
     template_name = 'memories/about.html'
-    
+
+
 class AddPost(LoginRequiredMixin, CreateView):
     """
     View for authenticated users to create a new post.
@@ -59,12 +64,14 @@ class AddPost(LoginRequiredMixin, CreateView):
         """
         return reverse('post_pending')
 
+
 class PendingPostView(TemplateView):
     """
     View to display a 'post pending approval' page.
     """
     template_name = 'memories/post_pending.html'
-    
+
+
 class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     View for authenticated users to update their own posts.
@@ -77,7 +84,8 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """
         Add a success message when the post is updated.
         """
-        messages.success(self.request, f'"{self.object.title}" has been successfully updated.')
+        messages.success(self.request, f'"{
+            self.object.title}" has been successfully updated.')
         return super().form_valid(form)
 
     def test_func(self):
@@ -88,9 +96,10 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def handle_no_permission(self):
         """
-        Handle cases where the user does not have permission to update the post.
+        Handle cases where the user does not have permission to update the post
         """
-        messages.error(self.request, "You do not have permission to edit this post.")
+        messages.error(
+            self.request, "You do not have permission to edit this post.")
         return redirect('home')
 
     def get_success_url(self):
@@ -98,8 +107,10 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         Redirect to the updated post's detail page upon success.
         """
         return reverse('post_detail', args=[self.object.slug])
-    
-class DeletePost(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+
+
+class DeletePost(LoginRequiredMixin, UserPassesTestMixin,
+                 SuccessMessageMixin, DeleteView):
     """
     View for authenticated users to delete their own posts.
     """
@@ -111,7 +122,8 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, D
         """
         Add a success message when the post is deleted.
         """
-        messages.success(self.request, f'"{self.object.title}" has been successfully deleted.')
+        messages.success(self.request, f'"{
+            self.object.title}" has been successfully deleted.')
         return super().form_valid(form)
 
     def test_func(self):
@@ -123,10 +135,12 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, D
 
     def handle_no_permission(self):
         """
-        Handle cases where the user does not have permission to delete the post.
+        Handle cases where the user does not have permission to delete the post
         """
-        messages.error(self.request, "You do not have permission to delete this post.")
+        messages.error(
+            self.request, "You do not have permission to delete this post.")
         return redirect('home')
+
 
 def post_detail(request, slug):
     """
@@ -136,7 +150,7 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
-    
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -145,7 +159,8 @@ def post_detail(request, slug):
             comment.post = post
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS, 'Comment submitted and awaiting approval'
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
             )
             return HttpResponseRedirect(request.path_info)
 
@@ -160,6 +175,7 @@ def post_detail(request, slug):
          "comment_form": comment_form,
          }
     )
+
 
 class EditComment(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
@@ -189,7 +205,9 @@ class EditComment(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """
         return reverse('post_detail', args=[self.object.post.slug])
 
-class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin,
+                    SuccessMessageMixin, DeleteView):
     """
     View for authenticated users to delete their own comments.
     """
@@ -210,9 +228,11 @@ class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin
         """
         return reverse('post_detail', args=[self.object.post.slug])
 
+
 class FavouritesListView(LoginRequiredMixin, ListView):
     """
-    View to display a list of posts that the user has added to their favourites.
+    View to display a list of posts that the user
+    has added to their favourites.
     """
     model = Favourite
     template_name = "memories/favourites_list.html"
@@ -220,9 +240,12 @@ class FavouritesListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         """
-        Return a queryset of the user's favourites, including related post data.
+        Return a queryset of the user's favourites,
+        including related post data.
         """
-        return Favourite.objects.filter(user=self.request.user).select_related('blog_post')
+        return Favourite.objects.filter(
+            user=self.request.user).select_related('blog_post')
+
 
 class AddToFavouritesView(LoginRequiredMixin, generic.View):
     """
@@ -231,18 +254,22 @@ class AddToFavouritesView(LoginRequiredMixin, generic.View):
     def post(self, request, *args, **kwargs):
         post_id = kwargs.get('post_id')
         blog_post = get_object_or_404(Post, id=post_id)
-        favourite, created = Favourite.objects.get_or_create(user=request.user, blog_post=blog_post)
+        favourite, created = Favourite.objects.get_or_create(
+            user=request.user, blog_post=blog_post)
         if created:
-            messages.success(request, f'"{blog_post.title}" has been added to your favourites.')
+            messages.success(request, f'"{
+                blog_post.title}" has been added to your favourites.')
         else:
-            messages.info(request, f'"{blog_post.title}" is already in your favourites.')
+            messages.info(request, f'"{
+                blog_post.title}" is already in your favourites.')
         return self.get_success_url()
-    
+
     def get_success_url(self):
         """
         Redirect to the favourites list page.
         """
         return redirect('favourites_list')
+
 
 class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
     """
@@ -251,25 +278,30 @@ class RemoveFromFavouritesView(LoginRequiredMixin, generic.View):
     def post(self, request, *args, **kwargs):
         post_id = kwargs.get('post_id')
         blog_post = get_object_or_404(Post, id=post_id)
-        favourite = Favourite.objects.filter(user=request.user, blog_post=blog_post)
+        favourite = Favourite.objects.filter(
+            user=request.user, blog_post=blog_post)
         if favourite.exists():
             favourite.delete()
-            messages.success(request, f'"{blog_post.title}" has been removed from your favourites.')
+            messages.success(request, f'"{
+                blog_post.title}" has been removed from your favourites.')
         else:
-            messages.info(request, f'"{blog_post.title}" was not in your favourites.')
+            messages.info(request, f'"{
+                blog_post.title}" was not in your favourites.')
         return self.get_success_url()
-    
+
     def get_success_url(self):
         """
         Redirect to the favourites list page.
         """
         return redirect('favourites_list')
-      
+
+
 def custom_404(request, exception):
     """
     Custom view for handling 404 errors.
     """
     return render(request, 'memories/404.html', status=404)
+
 
 def custom_500(request):
     """
