@@ -355,9 +355,6 @@ Used to structure the application's main pages, including the layout of memories
 [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS)  
 Employed to style the application's front-end, enhancing the visual appeal and user experience through thoughtful design.
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com)  
-Implemented to add interactivity to the app, such as dynamic form validation and user feedback.
-
 [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org/)  
 Used as the server-side programming language for building the back-end logic with Django.
 

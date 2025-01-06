@@ -5,6 +5,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView, DeleteVie
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from django.shortcuts import HttpResponseRedirect
