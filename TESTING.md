@@ -76,6 +76,21 @@ The CSS was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-va
 ### Python Validation <a name="python-validation"></a>
 The Python code was checked for errors using [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to ensure it follows PEP 8 standards and is free from major syntax issues or inefficiencies.
 
+**manage.py**
+![Python Validator manage.py](./testing_images/pep8_manage.png)
+
+**models.py**
+![Python Validator models.py](./testing_images/pep8_models.png)
+
+**views.py**
+![Python Validator views.py](./testing_images/pep8_views.png)
+
+**urls.py**
+![Python Validator models.py](./testing_images/pep8_urls.png)
+
+**forms.py**
+![Python Validator models.py](./testing_images/pep8_forms.png)
+
 ---
 
 ## 2. Lighthouse <a name="lighthouse"></a>

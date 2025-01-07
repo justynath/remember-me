@@ -4,6 +4,7 @@ from django.test import TestCase
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
+
 class TestBlogViews(TestCase):
     def setUp(self):
         # Create a user
@@ -40,17 +41,20 @@ class TestBlogViews(TestCase):
 
     def test_delete_post_view(self):
         self.client.login(username="testuser", password="testpassword")
-        response = self.client.post(reverse('delete_post', args=[self.post.slug]))
+        response = self.client.post(reverse(
+            'delete_post', args=[self.post.slug]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Post.objects.filter(slug="test-post").exists())
 
     def test_add_comment(self):
         self.client.login(username="testuser", password="testpassword")
-        response = self.client.post(reverse('post_detail', args=['test-post']), {
+        response = self.client.post(reverse(
+            'post_detail', args=['test-post']), {
             'content': 'This is a test comment.'
         })
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(Comment.objects.filter(content="This is a test comment.").exists())
+        self.assertTrue(Comment.objects.filter(
+            content="This is a test comment.").exists())
 
     def test_edit_comment(self):
         self.client.login(username="testuser", password="testpassword")
@@ -59,7 +63,8 @@ class TestBlogViews(TestCase):
             author=self.user,
             content="Initial comment"
         )
-        response = self.client.post(reverse('edit_comment', args=[comment.id]), {
+        response = self.client.post(reverse(
+            'edit_comment', args=[comment.id]), {
             'content': 'Edited comment'
         })
         self.assertEqual(response.status_code, 302)
@@ -73,6 +78,7 @@ class TestBlogViews(TestCase):
             author=self.user,
             content="Comment to delete"
         )
-        response = self.client.post(reverse('delete_comment', args=[comment.id]))
+        response = self.client.post(reverse(
+            'delete_comment', args=[comment.id]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Comment.objects.filter(id=comment.id).exists())
