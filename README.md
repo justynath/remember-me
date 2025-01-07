@@ -482,6 +482,7 @@ Deploy the application to Heroku by following these steps:
    - Enable automatic deploys or manually click **Deploy Branch**.
 7. **Access the Deployed App**:  
    - Once deployment is complete, click **Open App** to view your live application.
+   
    [Live Link](https://remember-me-jth-8eebce62c286.herokuapp.com/)
 
 ---

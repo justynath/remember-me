@@ -37,13 +37,25 @@ The HTML code was validated using the [W3C Validator](https://validator.w3.org/)
 ![HTML Validator Favourites](./testing_images/html_validator_favourites.png)
 
 **Login** (login.html)
-![HTML Validator Login](./testing_images/html_validator_ligin.png)
+![HTML Validator Login](./testing_images/html_validator_login.png)
 
 **Sign up** (signup.html)
 ![HTML Validator Signup](./testing_images/html_validator_signup.png)
 
 **Logout** (logout.html)
 ![HTML Validator Logout](./testing_images/html_validator_logout.png)
+
+**Edit Post** (edit_post.html)
+![HTML Validator Edit Post](./testing_images/html_validator_edit_post.png)
+
+**Delete Post** (delete_post.html)
+![HTML Validator Delete Post](./testing_images/html_validator_delete_post.png)
+
+**Edit Comment** (edit_comment.html)
+![HTML Validator Edit Comment](./testing_images/html_validator_edit_comment.png)
+
+**Delete Comment** (delete_comment.html)
+![HTML Validator Delete Comment](./testing_images/html_validator_delete_comment.png)
 
 
 ### CSS Validation <a name="css-validation"></a>
@@ -72,6 +84,18 @@ The CSS was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-va
 
 **Logout** (logout.css)
 ![CSS Validator Logout](./testing_images/css_validator_logout.png)
+
+**Edit Post** (edit_post.css)
+![CSS Validator Edit Post](./testing_images/css_validator_edit_post.png)
+
+**Delete Post** (delete_post.css)
+![CSS Validator Delete Post](./testing_images/css_validator_delete_post.png)
+
+**Edit Comment** (edit_comment.css)
+![CSS Validator Edit Comment](./testing_images/css_validator_edit_comment.png)
+
+**Delete Comment** (delete_comment.css)
+![CSS Validator Delete Comment](./testing_images/css_validator_delete_comment.png)
 
 ### Python Validation <a name="python-validation"></a>
 The Python code was checked for errors using [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to ensure it follows PEP 8 standards and is free from major syntax issues or inefficiencies.
