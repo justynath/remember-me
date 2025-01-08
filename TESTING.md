@@ -217,7 +217,7 @@ The application was rigorously tested on a wide range of devices to ensure optim
 ### Feature Testing <a name="feature-testing"></a>
 Each feature of the application was manually tested to ensure it behaves as expected. This included user interactions such as:  
 
-#### Navigation Bar
+### Navigation Bar
 
 | **Feature**              | **Expected Outcome**                                                                                  | **Testing Performed**                                     | **Result**                                      | **Pass/Fail** |
 |---------------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------|------------------------------------------------|---------------|
@@ -236,6 +236,7 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Login Link**            | Clicking "Login" redirects the user to the login page.                                               | Click "Login" link.                                      | User is redirected to the login page.          | Pass ✅       |
 | **Divider Styling**       | Divider between "Login" and "Sign Up" links is properly displayed for unauthenticated users.         | View navbar as an unauthenticated user.                  | Divider is correctly displayed.                | Pass ✅       |
 
+### Home
 
 #### Home: Introductory Section
 
@@ -260,7 +261,6 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Placeholder Image**     | Placeholder image appears when a post has no associated image.                        | Test with a post lacking an image.          | Placeholder image is correctly displayed.      | Pass ✅       |
 | **Post Title Link**       | Clicking a post title redirects the user to the post's detail page.                   | Click on a post title link.                 | User is redirected to the post detail page.    | Pass ✅       |
 | **Responsive Layout**     | The grid layout adjusts seamlessly across various screen sizes (desktop, tablet, mobile). | Resize browser and test on multiple devices.| Section layout is responsive.                 | Pass ✅       |
-| **Image Flash Effect**    | Hovering over the post image reveals the author's name with an overlay.               | Hover over a post image.                    | Author's name appears with overlay correctly.  | Pass ✅       |
 | **Card Excerpt and Date** | Post excerpt and creation date are displayed below the title.                          | Inspect each post card.                     | Excerpt and date are correctly displayed.      | Pass ✅       |
 
 #### Home: Login/Sign Up Section
@@ -289,6 +289,7 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Styling Consistency**     | Footer styling matches the overall design of the website.                   | Inspect footer styling.               | Footer style is consistent with the site.   | Pass ✅       |
 | **Accessibility**           | Footer text and link have sufficient color contrast for readability.        | Use a contrast checker tool.          | Contrast meets accessibility standards.     | Pass ✅       |
 
+### Memories
 
 #### Memories Section
 
@@ -303,7 +304,6 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Row Breaks**            | Rows break after every three posts for proper alignment.                              | Load the page with more than three posts. | Rows break correctly.                       | Pass ✅       |
 | **Styling Consistency**   | Styling of the section matches the overall website design.                            | Inspect visual styling.                   | Styling is consistent and visually pleasing.| Pass ✅       |
 | **Responsive Behavior**   | Section adjusts properly on different screen sizes and devices.                       | Test on various devices.                  | Section remains responsive and functional.  | Pass ✅       |
-| **Accessibility**         | Text and links have sufficient contrast and appropriate semantic HTML elements.       | Use a contrast checker and inspect HTML.  | Accessibility standards are met.            | Pass ✅       |
 
 ---
 
@@ -317,7 +317,27 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Disabled State**        | Pagination buttons are disabled when on the first or last page, respectively.          | Navigate to the first and last pages.         | Buttons are disabled correctly.             | Pass ✅       |
 | **Page Parameter**        | URL updates with the correct `?page=` parameter when navigating pages.                 | Click pagination buttons and inspect URL.     | URL updates correctly.                      | Pass ✅       |
 | **Responsive Design**     | Pagination layout adjusts properly on smaller screens.                                 | Resize the browser window.                    | Pagination remains functional and readable. | Pass ✅       |
-| **Accessibility**         | Pagination controls are keyboard-navigable and use appropriate ARIA labels.           | Test keyboard navigation and inspect ARIA.    | Pagination is accessible.                   | Pass ✅       |
+
+
+### Post Details and Comment Section
+
+| **Feature**                       | **Expected Outcome**                                                                                           | **Testing Performed**                           | **Result**                                          | **Pass/Fail** |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------|---------------|
+| **Masthead Display**               | Displays the post title, author, and creation date prominently.                                                | Load the post detail page and observe masthead.| Masthead displays title, author, and creation date.| Pass ✅       |
+| **Masthead Image**                 | A default placeholder image is displayed in the masthead.                                                     | Load the post detail page.                     | Default placeholder image appears.                | Pass ✅       |
+| **Post Content Display**           | Displays the post content correctly with any formatting.                                                      | Load the post detail page.                     | Post content is displayed with proper formatting. | Pass ✅       |
+| **Add to Favourites Button**       | Clicking the "Add to Favourites" button sends a POST request and updates the database.                        | Click the button while logged in.              | POST request is sent, and database is updated.    | Pass ✅       |
+| **Edit Post Button Visibility**    | The "Edit" button is only visible to the post author.                                                         | Log in as the author and view the page.        | Edit button is displayed only for the author.     | Pass ✅       |
+| **Delete Post Button Visibility**  | The "Delete" button is only visible to the post author.                                                       | Log in as the author and view the page.        | Delete button is displayed only for the author.   | Pass ✅       |
+| **Comments Display**               | Displays all approved comments under the post, with proper formatting and timestamps.                         | Load the page with comments added.             | Comments are displayed correctly.                 | Pass ✅       |
+| **Unapproved Comments (Author)**   | Unapproved comments are visible to their author with a "waiting for approval" message.                        | Add a comment and view as the author.          | Unapproved comment shows "awaiting approval".     | Pass ✅       |
+| **Unapproved Comments (Others)**   | Unapproved comments are hidden from all other users.                                                          | Add a comment and view as a different user.    | Unapproved comment is not visible.               | Pass ✅       |
+| **Edit Comment Button**            | The "Edit Comment" button is visible to the comment author.                                                   | Log in as the comment author and view comments.| Edit button is displayed for the comment author.  | Pass ✅       |
+| **Delete Comment Button**          | The "Delete Comment" button is visible to the comment author.                                                 | Log in as the comment author and view comments.| Delete button is displayed for the comment author.| Pass ✅       |
+| **Comment Submission (Logged In)** | Logged-in users can submit a comment, and it appears as unapproved initially.                                 | Submit a comment while logged in.              | Comment is submitted and marked as unapproved.    | Pass ✅       |
+| **Comment Submission (Guest)**     | Guests are prompted to log in before submitting a comment.                                                    | Try to submit a comment as a guest.            | Guests are redirected to the login page.          | Pass ✅       |
+| **Responsive Layout**              | The layout adjusts seamlessly across desktop, tablet, and mobile devices.                                     | Resize browser or test on devices.             | Layout adapts correctly across screen sizes.      | Pass ✅       |
+| **Form Submission Validation**     | Form validation prevents empty comments from being submitted.                                                 | Submit the form without filling in content.    | Validation prevents submission.                   | Pass ✅       |
 
 
 ### About Page
@@ -329,3 +349,91 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Layout**                 | Text and image align properly on different screen sizes.                             | Resize the window or check on mobile. | Layout adjusts correctly. | Pass ✅       |
 | **Additional Content**     | Content below the intro section is displayed correctly.                              | Scroll through the content.          | Content displays fine.   | Pass ✅       |
 | **Mobile View**            | Page looks good on mobile devices.                                                   | Test on mobile.                       | Mobile view is optimized.| Pass ✅       |
+
+### Create Post Page and Form Submission
+
+#### Create Post Page Styling
+
+| **Feature**                  | **Expected Outcome**                                                                               | **Testing Performed**                             | **Result**                             | **Pass/Fail** |
+|-------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------|-----------------------------------------|---------------|
+| **Background and Spacing**    | The page displays a light background with appropriate padding and spacing.                       | Load the create post page.                       | Background and spacing are correct.    | Pass ✅       |
+| **Heading Styling**           | The heading is styled with primary color, bold text, and is centered.                            | Load the page and inspect the heading.           | Heading styling is correct.            | Pass ✅       |
+| **Form Box Styling**          | The form has rounded corners, shadow effect, and light background.                               | Load the page and inspect the form box.          | Form box styling is applied correctly. | Pass ✅       |
+| **Button Styling**            | Submit button is styled with primary color, rounded edges, and hover effect.                     | Inspect and hover over the submit button.        | Button styling is correct.             | Pass ✅       |
+| **Responsive Design**         | Page layout adjusts properly on smaller screens.                                                 | Resize the browser or use a mobile device.       | Layout is responsive.                  | Pass ✅       |
+
+---
+
+#### Create Post Form Submission
+
+| **Feature**                  | **Expected Outcome**                                                                               | **Testing Performed**                             | **Result**                             | **Pass/Fail** |
+|-------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------|-----------------------------------------|---------------|
+| **Form Fields Rendering**     | All fields (title, theme, excerpt, content, post image) are displayed with correct widgets.       | Load the create post page.                       | Form fields render correctly.          | Pass ✅       |
+| **Title Uniqueness**          | Error is displayed when a duplicate title is submitted.                                          | Submit a form with an existing post title.       | Validation error is shown.             | Pass ✅       |
+| **Slug Auto-generation**      | A URL-friendly slug is generated based on the title upon form submission.                        | Submit a valid form and inspect the database.    | Slug is generated correctly.           | Pass ✅       |
+| **Author Association**        | The logged-in user is automatically set as the post author.                                      | Submit a valid form and inspect the database.    | Author field is correctly assigned.    | Pass ✅       |
+| **Status Default**            | The post status is set to "draft" (value `0`) upon submission.                                   | Submit a valid form and inspect the database.    | Status is set to "draft".              | Pass ✅       |
+| **Redirection on Success**    | User is redirected to the "post pending approval" page after successful submission.              | Submit a valid form.                             | User is redirected to the correct page.| Pass ✅       |
+| **Validation Errors**         | Form displays validation errors for empty or invalid fields (e.g., missing required fields).     | Submit a form with missing/invalid data.         | Errors are displayed as expected.      | Pass ✅       |
+| **Image Upload Handling**     | Uploaded image is correctly saved and associated with the post.                                  | Submit a form with an image file.                | Image is correctly uploaded.           | Pass ✅       |
+| **Message on Success**        | A success message ("Post created and awaiting approval.") is displayed after submission.         | Submit a valid form.                             | Success message is displayed.          | Pass ✅       |
+| **Theme Selection**           | A dropdown is rendered for the "theme" field, and selected value is saved correctly.             | Select a theme and submit the form.              | Theme is saved as expected.            | Pass ✅       |
+| **Rich Text Content**         | The "content" field supports rich text editing with Summernote widget.                          | Enter styled content and submit the form.        | Styled content is saved correctly.     | Pass ✅       |
+| **Mobile Responsiveness**     | The form adjusts properly on smaller screen sizes.                                              | Resize the browser or use a mobile device.       | Form layout adapts correctly.          | Pass ✅       |
+
+### Edit Post Page and Form Submission
+
+#### Edit Post Page Styling
+
+| **Feature**                  | **Expected Outcome**                                                                               | **Testing Performed**                             | **Result**                             | **Pass/Fail** |
+|-------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------|-----------------------------------------|---------------|
+| **Background and Spacing**    | The page has a clean layout with appropriate spacing and centered form.                          | Load the edit post page.                         | Background and spacing are correct.    | Pass ✅       |
+| **Heading Styling**           | The heading is styled with bold text and is centered.                                            | Load the page and inspect the heading.           | Heading styling is correct.            | Pass ✅       |
+| **Form Box Styling**          | The form has rounded corners, a shadow effect, and proper padding.                               | Load the page and inspect the form box.          | Form box styling is applied correctly. | Pass ✅       |
+| **Button Styling**            | Update button is styled with primary color, rounded edges, and hover effect.                     | Inspect and hover over the update button.        | Button styling is correct.             | Pass ✅       |
+| **Responsive Design**         | Page layout adjusts properly on smaller screens.                                                 | Resize the browser or use a mobile device.       | Layout is responsive.                  | Pass ✅       |
+
+---
+
+#### Edit Post Form Submission
+
+| **Feature**                  | **Expected Outcome**                                                                               | **Testing Performed**                             | **Result**                             | **Pass/Fail** |
+|-------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------|-----------------------------------------|---------------|
+| **Form Fields Rendering**     | All fields (title, theme, excerpt, content, post image) are displayed with correct widgets.       | Load the edit post page.                         | Form fields render correctly.          | Pass ✅       |
+| **Title Read-Only**           | The "title" field is displayed but cannot be edited.                                             | Inspect the title field.                         | Title field is read-only.              | Pass ✅       |
+| **Theme Dropdown**            | The "theme" field is displayed as a dropdown with correct options.                               | Inspect the theme field.                         | Theme dropdown is rendered correctly.  | Pass ✅       |
+| **Slug Persistence**          | Slug remains unchanged after editing the post.                                                   | Edit the post and inspect the database.          | Slug remains unchanged.                | Pass ✅       |
+| **Author Validation**         | Only the post's author can access the edit page.                                                 | Try accessing the page as a different user.      | Unauthorized access is blocked.        | Pass ✅       |
+| **Validation Errors**         | Form displays validation errors for invalid or missing fields.                                   | Submit the form with invalid/missing data.       | Errors are displayed as expected.      | Pass ✅       |
+| **Redirection on Success**    | User is redirected to the updated post's detail page after a successful update.                  | Submit a valid form.                             | User is redirected to the correct page.| Pass ✅       |
+| **Message on Success**        | A success message is displayed after the post is updated.                                        | Submit a valid form.                             | Success message is displayed.          | Pass ✅       |
+| **Image Update Handling**     | If a new image is uploaded, it replaces the old one; otherwise, the existing image remains.       | Submit the form with/without an image.           | Image updates correctly.               | Pass ✅       |
+| **Rich Text Content**         | The "content" field supports rich text editing and displays updated content properly.             | Edit the content and submit the form.            | Styled content is saved correctly.     | Pass ✅       |
+| **Mobile Responsiveness**     | The form adjusts properly on smaller screen sizes.                                               | Resize the browser or use a mobile device.       | Form layout adapts correctly.          | Pass ✅       |
+
+
+### Delete Post Page and Functionality
+
+#### Delete Post Page Styling
+
+| **Feature**                | **Expected Outcome**                                                                      | **Testing Performed**                | **Result**                           | **Pass/Fail** |
+|-----------------------------|------------------------------------------------------------------------------------------|---------------------------------------|---------------------------------------|---------------|
+| **Background and Spacing**  | The page layout is centered with appropriate spacing.                                    | Load the delete post page.            | Background and spacing are correct.   | Pass ✅       |
+| **Heading Styling**         | The heading is styled with bold text and displays the title of the post being deleted.   | Inspect the page heading.             | Heading is displayed and styled correctly. | Pass ✅ |
+| **Confirmation Message**    | A clear warning message is displayed to inform the user about the irreversible action.   | Inspect the warning message.          | Warning message is correct.           | Pass ✅       |
+| **Button Styling**          | The delete button is styled prominently with hover effects.                              | Inspect and hover over the delete button. | Button styling is correct.         | Pass ✅       |
+| **Responsive Design**       | The layout adjusts properly for smaller screen sizes.                                    | Resize the browser or use a mobile device. | Layout is responsive.             | Pass ✅       |
+
+---
+
+#### Delete Post Functionality
+
+| **Feature**                   | **Expected Outcome**                                                                      | **Testing Performed**                   | **Result**                              | **Pass/Fail** |
+|--------------------------------|------------------------------------------------------------------------------------------|------------------------------------------|------------------------------------------|---------------|
+| **Delete Button Submission**   | Clicking the "Yes, Delete Memory" button deletes the post.                               | Submit the delete form.                  | Post is deleted successfully.           | Pass ✅       |
+| **Success Redirection**        | After deletion, user is redirected to the memories page.                                 | Delete a post and observe redirection.   | User is redirected to the memories page.| Pass ✅       |
+| **Success Message**            | A success message is displayed after deleting the post.                                  | Delete a post and observe the message.   | Success message is displayed correctly. | Pass ✅       |
+| **Permission Validation**      | Only the post's author can access the delete page and delete the post.                   | Try accessing the delete page as another user. | Unauthorized access is blocked.   | Pass ✅       |
+| **Object Display**             | The title of the post to be deleted is correctly displayed on the page.                  | Inspect the delete page.                 | Post title is displayed correctly.       | Pass ✅       |
+| **Post Absence After Deletion**| The deleted post no longer appears on the memories list page.                            | Delete a post and check the list page.   | Post is removed from the list.           | Pass ✅       |
+| **Cancel Deletion**            | Navigating away without submitting the form does not delete the post.                    | Leave the page without submitting.       | Post remains intact.                    | Pass ✅       |
