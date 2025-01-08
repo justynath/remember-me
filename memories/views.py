@@ -140,7 +140,7 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin,
         messages.error(
             self.request, "You do not have permission to delete this post.")
         return redirect('home')
-
+    
 
 def post_detail(request, slug):
     """
@@ -169,11 +169,12 @@ def post_detail(request, slug):
     return render(
         request,
         "memories/post_detail.html",
-        {"post": post,
-         "comments": comments,
-         "comment_count": comment_count,
-         "comment_form": comment_form,
-         }
+        {
+            "post": post,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
+        }
     )
 
 

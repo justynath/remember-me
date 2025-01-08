@@ -64,13 +64,12 @@
         <!-- Displaying Comments -->
         <div class="row">
             <div class="col-md-12 card comment-card">
-                {% with comments.filter(approved=True).count as total_comments %}
-                <h3 class="comments-heading">{{ total_comments }} Comment{{ total_comments|pluralize }}</h3>
-                {% endwith %}
+                <h3 class="comments-heading">{{ comment_count }} Comment{{ comment_count|pluralize }}</h3>
                 <div class="card-body">
                     {% for comment in comments %}
-                    {% if comment.approved %}
-                    <div class="p-3 comments">
+                    <div class="p-3 comments
+                        {% if not comment.approved and comment.author != request.user %}
+                        d-none{% endif %}">
                         <p class="font-weight-bold">
                             {{ comment.author }} |
                             <span class="font-weight-normal">
@@ -80,19 +79,24 @@
                         <div id="comment{{ comment.id }}" class="comment-content">
                             {{ comment.content | linebreaks }}
                         </div>
+
+                        {% if not comment.approved and comment.author == request.user %}
+                        <p class="approval text-muted">
+                            This comment is awaiting approval
+                        </p>
+                        {% endif %}
                     </div>
+
                     {% if comment.author == request.user %}
                     <div class="comment-buttons">
                         <a href="{% url 'edit_comment' comment.id %}" class="btn btn-comment-edit">Edit</a>
                         <a href="{% url 'delete_comment' comment.id %}" class="btn btn-comment-delete">Delete</a>
                     </div>
                     {% endif %}
-                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
-
 
         <!-- Creating New Comments -->
         <div class="row">
