@@ -36,7 +36,7 @@
 
 .btn-post-pending:hover {
     background-color: var(--clr-primary-hover);
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
 }
 
 @media (max-width: 768px) {

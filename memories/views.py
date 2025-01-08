@@ -72,6 +72,8 @@ class PendingPostView(TemplateView):
     template_name = 'memories/post_pending.html'
 
 
+from django.contrib import messages
+
 class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     View for authenticated users to update their own posts.
@@ -84,8 +86,12 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """
         Add a success message when the post is updated.
         """
-        messages.success(self.request, f'"{
-            self.object.title}" has been successfully updated.')
+        success_message = f'"{self.object.title}" has been successfully updated.'
+        
+        # Check if the success message has already been displayed
+        if not messages.get_messages(self.request):
+            messages.success(self.request, success_message)
+        
         return super().form_valid(form)
 
     def test_func(self):

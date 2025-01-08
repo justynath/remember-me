@@ -1,4 +1,5 @@
 # TESTING DOCUMENTATION
+## REMEMEBER-ME Django Project
 
 ### Content
 
@@ -11,6 +12,7 @@
 4. [Browsers and Device Testing](#browsers-and-device-testing)
 5. [Manual Testing](#manual-testing)  
     - [Feature Testing](#feature-testing)  
+6. [Bugs](#bugs)
 
 ---
 
@@ -437,3 +439,57 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Object Display**             | The title of the post to be deleted is correctly displayed on the page.                  | Inspect the delete page.                 | Post title is displayed correctly.       | Pass ✅       |
 | **Post Absence After Deletion**| The deleted post no longer appears on the memories list page.                            | Delete a post and check the list page.   | Post is removed from the list.           | Pass ✅       |
 | **Cancel Deletion**            | Navigating away without submitting the form does not delete the post.                    | Leave the page without submitting.       | Post remains intact.                    | Pass ✅       |
+
+
+# Bugs <a name="bugs"></a>
+
+## Bugs resolved
+This section provides a summary of bugs that have been identified, reported, and subsequently resolved in the **"Remember Me"** project.
+
+### Bug Tracking
+Below is a summary of resolved bugs:
+
+| Bug ID  | Bug Description                                                                                 | Status   |
+| ------- | ------------------------------------------------------------------------------------------------ | -------- |
+| #001    | Unapproved comments were visible to other users or unregistered users                            | Resolved |
+| #002   | The favicon was not working across all pages.                                                     | Resolved |
+| #003    | Comments were repeatedly added on page refresh                                                    | Resolved |
+
+### Bug Details
+Here are the details of the resolved bugs:
+
+#### Bug #001
+**Description:**
+Unapproved comments were visible to other users and unregistered users, causing a significant issue with comment moderation. Comments made by registered users were displayed without the correct approval status, allowing unapproved comments to be visible even to non-authors.
+
+**Resolution:**
+The view was adjusted to filter out unapproved comments from being displayed to non-authors and non-logged-in users. In the template, a conditional logic was added to show unapproved comments **only** to the comment authors with a status message indicating they are awaiting approval. Unapproved comments from other users were hidden from everyone except the author.
+
+**Impact:**
+- Unapproved comments are no longer visible to other users and unregistered users.
+- Registered users now see their own unapproved comments with a "This comment is awaiting approval" message.
+- The system now correctly handles comment visibility based on approval status, ensuring the comment moderation flow works as expected.
+
+#### Bug #002
+
+**Description**: 
+The favicon was not working across all pages.  
+**Resolution**: 
+To ensure the favicon works across all pages, the `href` attribute was updated to use the `{% static %}` template tag, which generates an absolute URL for static files:  
+```html
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+```
+
+### Bug #003
+
+**Description:**  
+Comments were repeatedly added every time the page was refreshed, which was causing duplicate comment submissions.
+
+**Resolution:**  
+To prevent duplicate comments from being submitted upon refreshing, the solution was to redirect the user to the same page after the form is submitted. This was done by returning `HttpResponseRedirect(request.path_info)` after successfully saving the comment.
+
+```python
+return HttpResponseRedirect(request.path_info)
+```
+
+---

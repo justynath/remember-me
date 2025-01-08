@@ -36,5 +36,5 @@
 
 .edit-post-form button:hover {
     background-color: #388E3C; 
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
 }

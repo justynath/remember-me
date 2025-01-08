@@ -202,8 +202,6 @@ body {
     }
 
     .post-details .btn-favourites,
-    .post-details .btn-edit,
-    .post-details .btn-delete,
     #submitButton {
         width: 100%; 
         margin: 0.5rem 0; 
@@ -211,13 +209,7 @@ body {
     }
 
     .comment-buttons {
-        flex-direction: column; 
         gap: 0.5rem;
         align-items: center;
-    }
-
-    #submitButton {
-        text-align: left; 
-        width: 100%; 
     }
 }
