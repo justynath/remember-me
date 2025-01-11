@@ -28,34 +28,33 @@
     font-size: 0.9rem;
     margin: 0.5rem 0;
     line-height: 1.4;
-    /* height: 85px; Matches truncated height */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    transition: height 0.3s ease; /* Smooth expand/collapse */
+    transition: height 0.3s ease;
 }
 
 .card-excerpt.expanded {
-    height: auto; /* Allows full content to be shown */
-    -webkit-line-clamp: unset; /* Removes truncation */
+    height: auto; 
+    -webkit-line-clamp: unset;
 }
 
 .show-more-btn {
-    display: none; /* Initially hide button */
-    margin-left: auto; /* Align to the right */
+    display: none; 
+    margin-left: auto; 
     font-size: 0.9rem;
     color: var(--clr-text-dark);
-    background: none; /* No background */
-    border: none; /* No border */
-    padding: 0; /* Minimal padding */
+    background: none; 
+    border: none; 
+    padding: 0;
     cursor: pointer;
     text-decoration: underline;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: color 0.3s ease; 
 }
 
 .show-more-btn:hover {
-    color: var(--clr-text-dark-hover); /* Darker color on hover */
+    color: var(--clr-text-dark-hover); 
 }
 
 .post-image {

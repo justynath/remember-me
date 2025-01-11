@@ -33,6 +33,7 @@
                                     <h2 class="card-title">{{ favourite.blog_post.title }}</h2>
                                 </a>
                                 <p class="card-excerpt">{{ favourite.blog_post.excerpt }}</p>
+                                <button class="show-more-btn">Show More</button>
                                 <hr />
                                 <p class="card-text">{{ favourite.blog_post.created_on }}</p>
                                 <form method="post" action="{% url 'remove_from_favourites' favourite.blog_post.id %}" style="display:inline;">
