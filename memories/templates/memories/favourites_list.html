@@ -21,9 +21,9 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in favourite.blog_post.post_image.url %}
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                                    <img class="card-img-top post-image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                                     {% else %}
-                                    <img class="card-img-top" src="{{ favourite.blog_post.post_image.url }}" alt="{{ favourite.blog_post.title }}">
+                                    <img class="card-img-top post-image" src="{{ favourite.blog_post.post_image.url }}" alt="{{ favourite.blog_post.title }}">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ favourite.blog_post.author }}</p>
