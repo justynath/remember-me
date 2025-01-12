@@ -358,6 +358,10 @@ Employed to style the application's front-end, enhancing the visual appeal and u
 [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org/)  
 Used as the server-side programming language for building the back-end logic with Django.
 
+[![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com/)
+
+Used for a small animation to truncate excerpt text and use a 'Show More'/'Show Less' button.
+
 ---
 
 ### Applications and Libraries

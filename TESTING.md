@@ -127,6 +127,15 @@ The Python code was checked for errors using [Code Institute's Python Linter](ht
 **forms.py**
 ![Python Validator models.py](./testing_images/pep8_forms.png)
 
+
+### JavaScript Validation <a name="js-validation"></a>
+Code has been validated with the official [Jshint](https://jshint.com/) validator and returned no errors or warnings.
+
+**script.js**
+
+![JavaScript Validator](./testing_images/js_validator.png)
+
+
 ---
 
 ## 2. Lighthouse <a name="lighthouse"></a>

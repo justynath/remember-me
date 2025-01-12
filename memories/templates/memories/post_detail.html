@@ -45,25 +45,21 @@
         </div>
     </div>
 
-    <!-- Post Buttons Section -->
-    <div class="container post-buttons">
-        <div class="row align-items-center">
-            <!-- Add to Favourites Button -->
-            <div class="col-md-6 d-flex">
-                <form method="post" action="{% url 'add_to_favourites' post.id %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-favourites">Add to Favourites</button>
-                </form>
-            </div>
-            <!-- Edit and Delete Buttons -->
-            {% if user.is_authenticated and user == post.author %}
-            <div class="col-md-6 d-flex justify-content-end">
-                <a href="{% url 'edit_post' post.slug %}" class="btn btn-edit">Edit</a>
-                <a href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
-            </div>
-            {% endif %}
-        </div>
-    </div>
+<!-- Post Buttons Section -->
+<div class="post-buttons">
+    <!-- Add to Favourites Button -->
+    <form method="post" action="{% url 'add_to_favourites' post.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-favourites">Add to Favourites</button>
+    </form>
+    <!-- Edit and Delete Buttons -->
+    {% if user.is_authenticated and user == post.author %}
+    <a href="{% url 'edit_post' post.slug %}" class="btn btn-edit">Edit</a>
+    <a href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
+    {% endif %}
+</div>
+
+
 
     <!-- Comment Section -->
     <div class="post-details comment-container">
