@@ -449,6 +449,32 @@ Each feature of the application was manually tested to ensure it behaves as expe
 | **Post Absence After Deletion**| The deleted post no longer appears on the memories list page.                            | Delete a post and check the list page.   | Post is removed from the list.           | Pass ✅       |
 | **Cancel Deletion**            | Navigating away without submitting the form does not delete the post.                    | Leave the page without submitting.       | Post remains intact.                    | Pass ✅       |
 
+### Sign Up Functionality Test
+
+| **Feature**                         | **Expected Outcome**                                                              | **Testing Performed**                                   | **Result**                                          | **Pass/Fail** |
+|-------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------|---------------|
+| **Form Display**                    | The sign-up form is displayed correctly with all required fields.                 | Open the sign-up page and check if the form fields are displayed. | All required fields are visible.                   | Pass ✅       |
+| **Form Validation**                 | The form validates inputs and shows error messages for missing or invalid fields. | Submit the form with invalid or missing data.           | Appropriate error messages are shown for invalid input. | Pass ✅       |
+| **Successful Sign-Up**              | On successful sign-up, the user is redirected to the homepage or dashboard.        | Submit the form with valid data and check redirection.  | User is redirected to the correct page.             | Pass ✅       |
+| **Successful Sign-Up Message**      | A success message or notification is shown after successful sign-up.              | Submit valid form data and observe the response.        | Success message appears confirming the sign-up.    | Pass ✅       |
+| **Existing User Redirect**          | User is redirected to login if they try to sign up with an existing account.       | Try to sign up with an already registered email.        | User is redirected to the login page.               | Pass ✅       |
+| **Redirect After Sign-Up**          | User is redirected to the intended page after sign-up if a redirect URL exists.    | Submit the form and check if the user is redirected to the intended page (if applicable). | User is redirected as expected.                    | Pass ✅       |
+| **Login Link Availability**         | A "Log In" link is available for users who already have an account.                | Inspect the sign-up page for the login link.            | Login link is present and works correctly.          | Pass ✅       |
+| **Cancel Sign-Up**                  | Navigating away without submitting the form does not sign up the user.             | Leave the page without submitting the form.             | No action is taken, and user remains on the same page. | Pass ✅       |
+
+### Log In Functionality Test
+
+| **Feature**                        | **Expected Outcome**                                                                 | **Testing Performed**                                       | **Result**                                            | **Pass/Fail** |
+|------------------------------------|--------------------------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------------------|---------------|
+| **Form Display**                   | The login form is displayed correctly with all required fields.                      | Open the login page and check if the form fields are displayed. | All required fields are visible.                     | Pass ✅       |
+| **Form Validation**                | The form validates inputs and shows error messages for incorrect credentials.        | Submit the form with invalid credentials (incorrect username/password). | Error message is displayed for invalid login.        | Pass ✅       |
+| **Successful Login**               | On successful login, the user is redirected to the dashboard or intended page.       | Submit the form with valid credentials and check redirection. | User is redirected to the correct page.              | Pass ✅       |
+| **Login Success Message**          | A success message or notification is shown after successful login.                   | Submit valid credentials and observe the response.          | Success message appears confirming the login.        | Pass ✅       |
+| **Existing User Redirect**         | User is redirected to the login page if they try to access protected pages without being logged in. | Try accessing a protected page without logging in.         | User is redirected to the login page.                | Pass ✅       |
+| **Redirect After Login**           | User is redirected to the intended page after login if a redirect URL exists.        | Log in and check if the user is redirected to the intended page (if applicable). | User is redirected as expected.                      | Pass ✅       |
+| **Sign Up Link Availability**      | A "Sign Up" link is available for users who do not have an account.                  | Inspect the login page for the sign-up link.               | Sign-up link is present and works correctly.          | Pass ✅       |
+| **Cancel Login**                   | Navigating away without submitting the form does not log in the user.                | Leave the page without submitting the form.                 | No action is taken, and user remains on the same page. | Pass ✅       |
+
 
 # Bugs <a name="bugs"></a>
 
@@ -464,11 +490,13 @@ Below is a summary of resolved bugs:
 | #002   | The favicon was not working across all pages.                                                     | Resolved |
 | #003    | Comments were repeatedly added on page refresh                                                    | Resolved |
 | #004    | Images in posts had inconsistent heights, causing uneven layouts                                 | Resolved |
+| #005    | Images in posts within the favourites section were not displaying due to incorrect path handling | Resolved |
 
 ### Bug Details
 Here are the details of the resolved bugs:
 
 #### Bug #001
+
 **Description:**
 Unapproved comments were visible to other users and unregistered users, causing a significant issue with comment moderation. Comments made by registered users were displayed without the correct approval status, allowing unapproved comments to be visible even to non-authors.
 
@@ -490,7 +518,7 @@ To ensure the favicon works across all pages, the `href` attribute was updated t
 <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 ```
 
-### Bug #003
+#### Bug #003
 
 **Description:**  
 Comments were repeatedly added every time the page was refreshed, which was causing duplicate comment submissions.
@@ -508,5 +536,23 @@ Images in posts had inconsistent heights, leading to a visually uneven layout.
 
 **Resolution:**  
 Ensured all images maintain a uniform height by applying consistent styling to the image container, improving layout consistency across devices.
+
+#### Bug #005
+
+**Description:**  
+Images in posts within the favourites section were not displaying due to incorrect image path handling.
+
+**Resolution:**  
+The issue was fixed by ensuring the correct path to the image was used. The template was updated to reference the image URL properly from the `favourite.blog_post.post_image.url` field, and a fallback image was applied when no image was available.
+
+**Fix Applied in Template:**
+
+```html
+{% if favourite.blog_post.post_image %}
+    <img src="{{ favourite.blog_post.post_image.url }}" alt="{{ favourite.blog_post.title }}">
+{% else %}
+    <img src="{% static 'images/default.jpg' %}" alt="placeholder image">
+{% endif %}
+```
 
 ---
