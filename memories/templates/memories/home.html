@@ -41,16 +41,11 @@
                     <div class="card-body">
                         <div class="image-container">
                             {% if "placeholder" in post.post_image.url %}
-                            <img class="card-img-top post-image" src="{% static 'images/default.jpg' %}"
-                              alt="placeholder image">
+                            <img src="{% static 'images/default.jpg' %}" alt="placeholder image">
                             {% else %}
-                            <img class="card-img-top post-image" src=" {{ post.post_image.url }}"
-                              alt="{{ post.title }}">
+                            <img src="{{ post.post_image.url }}" alt="{{ post.title }}">
                             {% endif %}
-                            <div class="image-flash">
-                                <p class="author">Author: {{ post.author }}</p>
-                            </div>
-                        </div>
+                        </div>    
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             <h2 class="card-title">{{ post.title }}</h2>
                         </a>
