@@ -8,7 +8,6 @@
 {% url 'account_logout' as logout_url %}
 {% url 'favourites_list' as favourites_url %}
 
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -88,6 +87,12 @@
                             <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">
                                 Sign Up
                             </a>
+                        </li>
+                    {% endif %}
+                    <!-- Share a Memory Button -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'create_post' %}" class="btn-share">Share Memory</a>
                         </li>
                     {% endif %}
                 </ul>                

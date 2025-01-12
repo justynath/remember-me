@@ -454,6 +454,7 @@ Below is a summary of resolved bugs:
 | #001    | Unapproved comments were visible to other users or unregistered users                            | Resolved |
 | #002   | The favicon was not working across all pages.                                                     | Resolved |
 | #003    | Comments were repeatedly added on page refresh                                                    | Resolved |
+| #004    | Images in posts had inconsistent heights, causing uneven layouts                                 | Resolved |
 
 ### Bug Details
 Here are the details of the resolved bugs:
@@ -491,5 +492,12 @@ To prevent duplicate comments from being submitted upon refreshing, the solution
 ```python
 return HttpResponseRedirect(request.path_info)
 ```
+#### Bug #004
+
+**Description:**  
+Images in posts had inconsistent heights, leading to a visually uneven layout.
+
+**Resolution:**  
+Ensured all images maintain a uniform height by applying consistent styling to the image container, improving layout consistency across devices.
 
 ---

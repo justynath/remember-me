@@ -25,7 +25,7 @@
                                     {% else %}
                                     <img src="{{ post.post_image.url }}" alt="{{ post.title }}">
                                     {% endif %}
-                                </div>                                
+                                </div>                                 
                                 <a href="{% url 'post_detail' favourite.blog_post.slug %}" class="post-link">
                                     <h2 class="card-title">{{ favourite.blog_post.title }}</h2>
                                 </a>

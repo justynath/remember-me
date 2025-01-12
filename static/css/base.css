@@ -15,7 +15,7 @@
     --clr-bg-dark: #0d1b2a; /* Deep Navy */
 
     /* Accent Colors */
-    --clr-accent: #ffcc00; /* Yellow */
+    --clr-accent: #e6b800; /* Yellow */
     --clr-accent-hover: #ffa500; /* Soft Orange */
 
     /* Borders */
@@ -64,6 +64,30 @@
     color: var(--clr-text-light); 
     margin: 0 0.25rem; 
     font-size: 1rem; 
+}
+
+/* Share a Memory Button Styling */
+.btn-share {
+    background-color: var(--clr-accent); /* Use the accent color */
+    color: var(--clr-text-light);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-share:hover {
+    background-color: var(--clr-accent-hover); /* Darker shade on hover */
+    color: var(--clr-text-light);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btn-share:active {
+    background-color: var(--clr-primary); /* Primary color when clicked */
 }
 
 /* Styling for Alerts */
