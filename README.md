@@ -177,7 +177,7 @@ The website's components are designed for a seamless user experience while empha
 
 
 ### Wireframes <a name="wireframes"></a>
-The [wireframes](./readme_images/wireframes.pdf) have been designed to provide a visual representation of each page's layout and functionality.
+The wireframes for [desktop](./readme_images/wireframes.pdf) and [mobile](./readme_images/wireframes_mobile.pdf) have been designed to provide a visual representation of each page's layout and functionality. The desktop wireframes include features beyond the MVP, which, due to time constraints, will be implemented in the future.
 
 ### Entity-Relationship Diagram <a name="entity-relationship-diagram"></a>
 
