@@ -45,10 +45,6 @@ The HTML code was validated using the [W3C Validator](https://validator.w3.org/)
 
 ![HTML Validator Login](./testing_images/html_validator_login.png)
 
-**Sign up** (signup.html)
-
-![HTML Validator Signup](./testing_images/html_validator_signup.png)
-
 **Logout** (logout.html)
 
 ![HTML Validator Logout](./testing_images/html_validator_logout.png)
