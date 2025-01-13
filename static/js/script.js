@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.card-excerpt').forEach((excerpt) => {
         const button = excerpt.nextElementSibling;

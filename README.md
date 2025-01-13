@@ -330,6 +330,10 @@ Subsequent milestones will cover enhancements and additional features that impro
 ![Home Share Memeory](./readme_images/home_share.png)
 ![Home Sign up](./readme_images/home_signup.png)
 
+12. **Error Pages**
+- 404 and 500 error pages have been included and styled. They include navigation links to enhance the user experience.
+![404 Page](./readme_images/404.png)
+
 
 ---
 
@@ -519,6 +523,10 @@ For a comprehensive guide to both manual and automated testing procedures, pleas
 
 - **[YouTube Tutorials](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)**  
   I referred to several videos from this playlist to learn how to implement various features in a Django blog. Some sections of my code are inspired by the examples demonstrated in these videos.
+
+- **[Python Testing Tutorial](https://www.youtube.com/watch?v=6I_haJimhPY)** 
+
+  In addition to the Code Institute Python Testing module, I used this tutorial for understanding and inspiration.
 
 - ChatGPT and Stack Overflow were used for researching errors and finding suggestions to fix bugs.
 
