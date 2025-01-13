@@ -1,0 +1,40 @@
+/* Edit Post Page Styling */
+.edit-post-section {
+    background-color: var(--clr-bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-post-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.edit-post-form {
+    background-color: var(--clr-text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-post-form button {
+    background-color: #4CAF50;
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s ease;
+}
+
+.edit-post-form button:hover {
+    background-color: #388E3C; 
+    color: var(--clr-text-light);
+}

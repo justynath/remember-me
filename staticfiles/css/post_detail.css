@@ -1,0 +1,247 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Masthead Styling */
+.post-details .masthead {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    padding: 2rem 0;
+    text-align: center; 
+}
+
+.post-details .masthead .post-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.post-details .masthead .post-subtitle {
+    font-size: 1rem;
+    color: var(--clr-bg-light);
+}
+
+.post-details .masthead-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Content and Comment Section */
+.post-details .container,
+.post-details .comment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.post-details .card-body {
+    color: var(--clr-text-dark);
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+.post-details .comment-container {
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* Comments Section */
+.comments {
+    margin: 1rem 0;
+    border: 1px solid var(--clr-border-light);
+    border-radius: 8px;
+}
+
+.comment-content {
+    color: var(--clr-text-dark);
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.post-details .comment-card {
+    border: none;
+}
+
+/* Links */
+.post-details a {
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+.post-details a:hover {
+    color: var(--clr-accent-hover);
+}
+
+/* General Button Styling */
+.post-buttons {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 0.5rem; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.post-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    color: var(--clr-text-light);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.post-buttons .btn:hover {
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Favourites Button */
+.post-buttons .btn-favourites {
+    background-color: var(--clr-primary);
+}
+
+.post-buttons .btn-favourites:hover {
+    background-color: var(--clr-primary-hover);
+}
+
+/* Edit Button */
+.post-buttons .btn-edit {
+    background-color: #4CAF50;
+}
+
+.post-buttons .btn-edit:hover {
+    background-color: #388E3C;
+    color: var(--clr-text-light);
+}
+
+/* Delete Button */
+.post-buttons .btn-delete {
+    background-color: #f44336;
+}
+
+.post-buttons .btn-delete:hover {
+    background-color: #c62828;
+    color: var(--clr-text-light);
+}
+
+/* Comment Buttons Section */
+.comment-buttons {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 0.5rem; 
+    padding-bottom: 1rem;
+}
+
+/* Edit Comment Button */
+.comment-buttons .btn-comment-edit {
+    background-color: #4CAF50;
+    color: var(--clr-text-light);
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    width: 200px;
+}
+.comment-buttons .btn-comment-edit:hover {
+    background-color: #388E3C;
+    color: var(--clr-text-light);
+}
+
+/* Delete Comment Button */
+.comment-buttons .btn-comment-delete {
+    background-color: #f44336;
+    color: var(--clr-text-light);
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    width: 200px;
+}
+.comment-buttons .btn-comment-delete:hover {
+    background-color: #c62828;
+    color: var(--clr-text-light);
+}
+
+/* Submit Button */
+#submitButton {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    font-size: 1rem;
+    padding: 0.5rem 1rem; 
+    border-radius: 5px;
+    border: none;
+    margin-top: 0.5rem; 
+    margin-left: 0; 
+    float: right;
+    cursor: pointer;
+    width: 200px;
+}
+#submitButton:hover {
+    background-color: var(--clr-primary-hover);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .post-details .container,
+    .post-details .comment-container {
+        max-width: 90%;
+        padding: 1rem; 
+    }
+
+    /* Make the post buttons take full width and stack vertically */
+    .post-buttons {
+        flex-direction: column; 
+        gap: 1rem; 
+        width: 90%; 
+        padding: 1rem; 
+        justify-content: center; 
+    }
+
+    /* Ensure all buttons take full width */
+    .post-buttons .btn-favourites,
+    .post-buttons .btn-edit,
+    .post-buttons .btn-delete {
+        width: 100%;  
+        margin: 0;  
+        padding: 0.75rem 1.5rem;  
+    }
+
+    /* Make the comment buttons take full width and stack vertically */
+    .comment-buttons {
+        display: flex;
+        flex-direction: column; 
+        gap: 1rem; 
+        width: 100%; 
+    }
+
+    /* Edit button */
+    .comment-buttons .btn-comment-edit,
+    /* Delete button */
+    .comment-buttons .btn-comment-delete {
+        width: 100%;  
+        float: none;  
+        margin: 0;  
+        padding: 0.75rem 1.5rem;  
+    }
+
+    /* Make the submit button full width as well */
+    .post-details .btn-favourites,
+    #submitButton {
+        width: 100%; 
+        margin: 0.5rem 0; 
+        float: none; 
+    }
+
+    /* Adjust gap and alignment for comment buttons */
+    .comment-buttons {
+        gap: 1rem; 
+        align-items: center; 
+    }
+}
+

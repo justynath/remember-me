@@ -1,0 +1,58 @@
+/* Login Page Styling */
+.login-page {
+    background-color: var(--clr-bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    margin-bottom: 1rem;
+}
+
+.login-message {
+    font-size: 1.1rem;
+    color: var(--clr-text-dark);
+    line-height: 1.6;
+}
+
+.login-form {
+    background-color: var(--clr-text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form button {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: var(--clr-primary-hover);
+    color: var(--clr-text-light);
+}
+
+/* Responsive Adjustments for Login Page */
+@media (max-width: 768px) {
+    .login-title {
+        font-size: 1.75rem;
+    }
+
+    .login-message {
+        font-size: 1rem;
+    }
+
+    .login-form {
+        padding: 1.5rem;
+    }
+}

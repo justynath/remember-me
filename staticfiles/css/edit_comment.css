@@ -1,0 +1,76 @@
+/* Edit Comment Page Styling */
+.edit-comment-section {
+    background-color: var(--clr-bg-light);
+    padding: 1.5rem; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.edit-comment-heading {
+    font-size: 1.75rem; 
+    font-weight: bold;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.edit-comment-form {
+    background-color: var(--clr-text-light);
+    padding: 1.5rem; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+/* Style the form fields */
+.edit-comment-form input,
+.edit-comment-form textarea {
+    width: 100%; 
+    max-width: 100%; 
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.edit-comment-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.edit-comment-form button {
+    background-color: #4CAF50; 
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; 
+    transition: background-color 0.3s ease;
+}
+
+.edit-comment-form button:hover {
+    background-color: #388E3C; 
+    color: var(--clr-text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-comment-section {
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-comment-form {
+        padding: 1rem;
+    }
+}

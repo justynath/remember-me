@@ -1,0 +1,59 @@
+/* Create Post Page Styling */
+.create-post-section {
+    background-color: var(--clr-bg-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-post-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.create-post-form {
+    background-color: var(--clr-text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-post-form button {
+    background-color: var(--clr-primary);
+    color: var(--clr-text-light);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-post-form button:hover {
+    background-color: var(--clr-primary-hover);
+    color: var(--clr-text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .create-post-section {
+        padding: 1.5rem;
+    }
+
+    .create-post-heading {
+        font-size: 1.5rem;
+    }
+
+    .create-post-form {
+        padding: 1.5rem;
+    }
+
+    .create-post-form button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
