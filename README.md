@@ -1,5 +1,7 @@
 # Remember Me
-![Quote](./readme_images/quote.png)
+
+![Responsiveness](./readme_images/am_i_responsive.png)
+
 [Live Page](https://remember-me-jth-8eebce62c286.herokuapp.com/)
 
 ### **Memorial Blog for a Bereaved Child**
